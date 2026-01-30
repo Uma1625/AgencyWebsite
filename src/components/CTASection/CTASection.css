@@ -1,0 +1,909 @@
+/* ============================================
+   CTA SPLIT SECTION - Premium 3D Morphographics
+   ============================================ */
+.cta-split-section {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* Dark Gradient Background */
+.cta-dark-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.cta-gradient-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            #0a0a1a 0%,
+            #0f0f2a 25%,
+            #141430 50%,
+            #0f0f2a 75%,
+            #0a0a1a 100%);
+}
+
+/* Animated Particles */
+.cta-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.6);
+    animation: floatParticle 20s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.particle-0 {
+    background: rgba(139, 92, 246, 0.7);
+}
+
+.particle-1 {
+    background: rgba(99, 102, 241, 0.7);
+    width: 3px;
+    height: 3px;
+}
+
+.particle-2 {
+    background: rgba(168, 85, 247, 0.6);
+    width: 5px;
+    height: 5px;
+}
+
+.particle-3 {
+    background: rgba(59, 130, 246, 0.6);
+    width: 2px;
+    height: 2px;
+}
+
+.particle-4 {
+    background: rgba(236, 72, 153, 0.5);
+    width: 4px;
+    height: 4px;
+}
+
+@keyframes floatParticle {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 1;
+    }
+}
+
+/* Floating Geometric Shapes */
+.floating-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    animation: shapeFloat 20s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    bottom: -50px;
+    left: 10%;
+    animation-delay: -7s;
+}
+
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 70%);
+    top: 50%;
+    left: 30%;
+    animation-delay: -14s;
+}
+
+@keyframes shapeFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(20px, 30px) scale(1.05);
+    }
+}
+
+/* Split Grid Layout */
+.cta-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Content Area */
+.cta-left-content {
+    padding-right: 40px;
+}
+
+.cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50px;
+    color: #a78bfa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.cta-badge svg {
+    font-size: 1.1rem;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+}
+
+.cta-split-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gradient-highlight {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmerText 3s linear infinite;
+}
+
+@keyframes shimmerText {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.cta-split-desc {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Features List */
+.cta-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.cta-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-check {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #10b981;
+    font-size: 1rem;
+}
+
+.cta-feature-item span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* CTA Buttons */
+.cta-split-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-cta-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+}
+
+.btn-cta-green {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.3);
+}
+
+/* ============================================
+   3D BRAND VISUAL - Premium Morphographics
+   ============================================ */
+.cta-right-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+}
+
+.brand-visual-3d {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+/* Holographic Background */
+.holographic-bg {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            rgba(139, 92, 246, 0.1),
+            rgba(99, 102, 241, 0.15),
+            rgba(168, 85, 247, 0.1),
+            rgba(236, 72, 153, 0.1),
+            rgba(99, 102, 241, 0.15),
+            rgba(139, 92, 246, 0.1));
+    filter: blur(40px);
+    animation: rotateHolo 20s linear infinite;
+}
+
+@keyframes rotateHolo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Orbiting Rings */
+.brand-orbit {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+.orbit-outer {
+    width: 380px;
+    height: 380px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.5)) 1;
+    border-radius: 50%;
+    border-image: none;
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.2),
+        inset 0 0 30px rgba(139, 92, 246, 0.1);
+}
+
+.orbit-middle {
+    width: 300px;
+    height: 300px;
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow:
+        0 0 25px rgba(99, 102, 241, 0.2),
+        inset 0 0 25px rgba(99, 102, 241, 0.1);
+}
+
+.orbit-inner {
+    width: 220px;
+    height: 220px;
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.3),
+        inset 0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+/* Orbit Dots */
+.orbit-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.4);
+}
+
+.dot-1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot-2 {
+    bottom: 20%;
+    right: 5%;
+}
+
+.dot-3 {
+    bottom: 30%;
+    left: 5%;
+}
+
+.dot-4 {
+    top: 5%;
+    right: 20%;
+}
+
+.dot-5 {
+    bottom: 10%;
+    left: 30%;
+}
+
+/* Premium 3D Logo Container */
+.brand-logo-container-3d {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transform-style: preserve-3d;
+}
+
+.holographic-shimmer {
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.1) 40%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.1) 60%,
+            transparent 80%);
+    background-size: 200% 200%;
+    animation: shimmerHolo 3s linear infinite;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@keyframes shimmerHolo {
+    0% {
+        background-position: 200% 200%;
+    }
+
+    100% {
+        background-position: -200% -200%;
+    }
+}
+
+.brand-logo-inner-3d {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 60px rgba(139, 92, 246, 0.5),
+        0 0 100px rgba(99, 102, 241, 0.3),
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 2px 20px rgba(255, 255, 255, 0.2);
+    transform: translateZ(30px);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-logo-inner-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: logoShine 4s infinite;
+}
+
+@keyframes logoShine {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.brand-logo-letter-3d {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.3);
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo Reflection */
+.logo-reflection {
+    position: absolute;
+    bottom: -80px;
+    width: 120px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(139, 92, 246, 0.3), transparent);
+    filter: blur(20px);
+    transform: scaleY(-0.5) rotateX(60deg);
+    opacity: 0.4;
+}
+
+/* Premium 3D Brand Name */
+.brand-name-3d-container {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.brand-name-wrapper {
+    display: flex;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.brand-prefix-3d {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 20px rgba(139, 92, 246, 0.5));
+    font-family: 'Outfit', sans-serif;
+    transform-style: preserve-3d;
+}
+
+.brand-suffix-3d {
+    display: flex;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    perspective: 1000px;
+}
+
+.morph-letter {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.morph-letter:hover {
+    color: #a78bfa;
+    transform: translateY(-5px) rotateX(10deg);
+    text-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+}
+
+/* Glowing Underline */
+.brand-underline {
+    width: 200px;
+    height: 3px;
+    margin-top: 12px;
+    background: linear-gradient(90deg, transparent, #8b5cf6, #a855f7, #8b5cf6, transparent);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+    transform-origin: center;
+}
+
+/* Floating Tech Icons - Enhanced 3D */
+.floating-tech {
+    position: absolute;
+    z-index: 5;
+}
+
+.tech-1 {
+    top: 15%;
+    right: 5%;
+}
+
+.tech-2 {
+    bottom: 25%;
+    right: 0%;
+}
+
+.tech-3 {
+    top: 20%;
+    left: 5%;
+}
+
+.tech-4 {
+    bottom: 30%;
+    left: 0%;
+}
+
+.tech-icon-3d {
+    width: 55px;
+    height: 55px;
+    background: rgba(15, 15, 35, 0.95);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(139, 92, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+    transform: translateZ(20px);
+}
+
+/* Enhanced Glow Effects */
+.brand-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glow-purple {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.glow-blue {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    top: 30%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    animation: pulseGlow 5s ease-in-out infinite reverse;
+}
+
+.glow-pink {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 70%);
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+    .cta-split-grid {
+        gap: 60px;
+    }
+
+    .cta-split-title {
+        font-size: 2.8rem;
+    }
+
+    .brand-visual-3d {
+        width: 380px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 992px) {
+    .cta-split-section {
+        padding: 100px 0;
+    }
+
+    .cta-split-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .cta-left-content {
+        padding-right: 0;
+        order: 2;
+    }
+
+    .cta-right-visual {
+        order: 1;
+    }
+
+    .cta-features-list {
+        align-items: center;
+    }
+
+    .cta-split-buttons {
+        justify-content: center;
+    }
+
+    .brand-visual-3d {
+        width: 350px;
+        height: 350px;
+    }
+
+    .orbit-outer {
+        width: 320px;
+        height: 320px;
+    }
+
+    .orbit-middle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit-inner {
+        width: 180px;
+        height: 180px;
+    }
+
+    .brand-logo-inner-3d {
+        width: 120px;
+        height: 120px;
+        border-radius: 25px;
+    }
+
+    .brand-logo-letter-3d {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-split-section {
+        padding: 80px 0;
+    }
+
+    .cta-split-title {
+        font-size: 2.2rem;
+    }
+
+    .cta-split-desc {
+        font-size: 1rem;
+    }
+
+    .brand-visual-3d {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-outer {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbit-middle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .orbit-inner {
+        width: 160px;
+        height: 160px;
+    }
+
+    .brand-logo-inner-3d {
+        width: 100px;
+        height: 100px;
+        border-radius: 22px;
+    }
+
+    .brand-logo-letter-3d {
+        font-size: 2.8rem;
+    }
+
+    .brand-prefix-3d {
+        font-size: 2.2rem;
+    }
+
+    .brand-suffix-3d {
+        font-size: 1.7rem;
+    }
+
+    .tech-icon-3d {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .btn-cta-gold,
+    .btn-cta-green {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-split-section {
+        padding: 60px 0;
+    }
+
+    .cta-split-title {
+        font-size: 1.8rem;
+    }
+
+    .cta-split-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-cta-gold,
+    .btn-cta-green {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .brand-visual-3d {
+        width: 260px;
+        height: 260px;
+    }
+
+    .orbit-outer {
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-middle {
+        width: 190px;
+        height: 190px;
+    }
+
+    .orbit-inner {
+        width: 140px;
+        height: 140px;
+    }
+
+    .brand-logo-inner-3d {
+        width: 85px;
+        height: 85px;
+        border-radius: 18px;
+    }
+
+    .brand-logo-letter-3d {
+        font-size: 2.3rem;
+    }
+
+    .brand-name-3d-container {
+        bottom: 35px;
+    }
+
+    .brand-prefix-3d {
+        font-size: 1.8rem;
+    }
+
+    .brand-suffix-3d {
+        font-size: 1.4rem;
+    }
+
+    .floating-tech {
+        display: none;
+    }
+}
