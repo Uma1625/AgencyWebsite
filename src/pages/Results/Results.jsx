@@ -228,7 +228,7 @@ const Results = () => {
                 <div className="container">
                     <div className="section-header">
                         <span className="subtitle">Testimonials</span>
-                        <h2>Client <span className="gradient-text">Reviews</span></h2>
+                        <h2>What Our Clients Say About <span className="gradient-text">Abhivrudhi</span></h2>
                     </div>
                     <div className="testimonials-grid">
                         {testimonials.map((testimonial, index) => (
@@ -256,6 +256,30 @@ const Results = () => {
                                 </div>
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* How We Measure Success */}
+            <section className="measure-success-section section">
+                <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
+                    <h2 style={{ marginBottom: '24px' }}>How We Measure <span className="gradient-text">Success</span></h2>
+                    <p style={{ marginBottom: '32px', color: 'var(--text-light)' }}>
+                        We believe in complete transparency. Our reporting aligns with Google Partner requirements and includes:
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+                        <div className="measurement-card" style={{ padding: '20px', background: 'rgba(30,30,40,0.6)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                            <h4 style={{ color: '#fff', marginBottom: '8px' }}>Google & Meta Reports</h4>
+                            <p style={{ fontSize: '0.9rem' }}>Direct dashboard data</p>
+                        </div>
+                        <div className="measurement-card" style={{ padding: '20px', background: 'rgba(30,30,40,0.6)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                            <h4 style={{ color: '#fff', marginBottom: '8px' }}>Analytics Integration</h4>
+                            <p style={{ fontSize: '0.9rem' }}>GA4 & CRM tracking</p>
+                        </div>
+                        <div className="measurement-card" style={{ padding: '20px', background: 'rgba(30,30,40,0.6)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                            <h4 style={{ color: '#fff', marginBottom: '8px' }}>Weekly Reporting</h4>
+                            <p style={{ fontSize: '0.9rem' }}>Consistent updates</p>
+                        </div>
                     </div>
                 </div>
             </section>

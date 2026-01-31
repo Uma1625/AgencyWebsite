@@ -18,11 +18,8 @@
 .industries-bg-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,
-            #020617 0%,
-            #051525 30%,
-            #081830 60%,
-            #020617 100%);
+    /* Using global 3D background */
+    background: #020617;
 }
 
 /* Corner Globe - Top Left */
@@ -103,7 +100,7 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background: transparent;
+    background: #020617;
     border: 2px solid rgba(14, 165, 233, 0.3);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     animation: hex-float 15s infinite ease-in-out;
@@ -211,7 +208,7 @@
 .industries-hero-bg .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 15, 26, 0.88) 0%, rgba(15, 15, 26, 0.75) 50%, rgba(15, 15, 26, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(15, 15, 26, 0.6) 0%, rgba(15, 15, 26, 0.5) 50%, rgba(15, 15, 26, 0.65) 100%);
 }
 
 /* Video Hero Container */
@@ -228,12 +225,13 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 1;
 }
 
 .hero-video-container .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 15, 26, 0.88) 0%, rgba(15, 15, 26, 0.75) 50%, rgba(15, 15, 26, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(15, 15, 26, 0.6) 0%, rgba(15, 15, 26, 0.5) 50%, rgba(15, 15, 26, 0.65) 100%);
     z-index: 1;
 }
 
@@ -246,7 +244,7 @@
 .bokeh-circle {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(80px);
 }
 
 .bokeh-1 {
@@ -277,7 +275,7 @@
     align-items: center;
     gap: 10px;
     padding: 12px 28px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.45);
     border: 1px solid var(--border-glow);
     border-radius: var(--radius-full);
     color: var(--primary-light);
@@ -359,7 +357,7 @@
 .industry-subtitle {
     display: inline-block;
     padding: 8px 20px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.45);
     border: 1px solid var(--border-glow);
     border-radius: var(--radius-full);
     color: var(--primary-light);
@@ -421,7 +419,7 @@
 .cta-bg-industries .cta-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.92) 0%, rgba(139, 92, 246, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.6) 0%, rgba(239, 68, 68, 0.5) 100%);
 }
 
 .cta-content-unified {

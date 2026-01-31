@@ -1,0 +1,325 @@
+/* Insights Page */
+.insights-page {
+    background: #020617;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Background - Additional effects on top of global background */
+.insights-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.insights-gradient {
+    display: none;
+    /* Using global animated background instead */
+}
+
+.insights-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    filter: blur(120px);
+    animation: insight-glow-float 18s ease-in-out infinite;
+}
+
+@keyframes insight-glow-float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-40px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+.insights-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    filter: blur(120px);
+}
+
+.insights-glow.glow-1 {
+    top: 10%;
+    right: -15%;
+    background: rgba(220, 38, 38, 0.50);
+}
+
+.insights-glow.glow-2 {
+    bottom: 10%;
+    left: -15%;
+    background: rgba(249, 115, 22, 0.12);
+}
+
+.insights-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.5;
+}
+
+/* Hero */
+.insights-hero {
+    position: relative;
+    z-index: 1;
+    padding: 160px 0 80px;
+    text-align: center;
+}
+
+.insights-hero-content .section-label {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(220, 38, 38, 0.45);
+    border: 1px solid rgba(220, 38, 38, 0.65);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.insights-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+.insights-hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Industry Section */
+.industry-insights-section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-white);
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.disclaimer-note {
+    font-size: 0.9rem !important;
+    color: var(--text-dark) !important;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.industry-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+.industry-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.45);
+}
+
+.industry-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.industry-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    border-radius: 12px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.industry-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-white);
+    flex: 1;
+}
+
+.avg-cpl {
+    padding: 6px 14px;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.industry-insights {
+    list-style: none;
+}
+
+.industry-insights li {
+    color: var(--text-light);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.industry-insights li:last-child {
+    border-bottom: none;
+}
+
+.industry-insights li::before {
+    content: "→ ";
+    color: var(--primary);
+}
+
+/* Trends */
+.trends-section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+}
+
+.trends-grid {
+    display: grid;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trend-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.trend-card:hover {
+    border-color: rgba(220, 38, 38, 0.65);
+    background: var(--bg-card-hover);
+}
+
+.trend-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.trend-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.trend-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* CTA */
+.insights-cta {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+}
+
+.insights-cta .cta-content {
+    text-align: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-xl);
+    padding: 60px;
+}
+
+.insights-cta h2 {
+    font-size: 2rem;
+    color: var(--text-white);
+    margin-bottom: 16px;
+}
+
+.insights-cta p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: var(--primary-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.65);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .insights-hero {
+        padding: 120px 0 60px;
+    }
+
+    .industry-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .trend-card {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .insights-cta .cta-content {
+        padding: 40px 24px;
+    }
+}

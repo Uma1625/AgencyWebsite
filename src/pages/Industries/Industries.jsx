@@ -18,7 +18,7 @@ const Industries = () => {
             description: 'Specialized marketing strategies for healthcare providers to connect with patients.',
             features: ['Patient-Centric Campaigns', 'Doctor Profile Videos', 'Online Reputation Management', 'Healthcare SEO'],
             gradient: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
-            image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600'
+            image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600'
         },
         {
             icon: <FaGraduationCap />,
@@ -27,7 +27,7 @@ const Industries = () => {
             description: 'Creative solutions to showcase academic excellence and attract students.',
             features: ['Campus Tour Videos', 'Admission Campaigns', 'Social Media Growth', 'Event Coverage'],
             gradient: 'linear-gradient(135deg, #F59E0B 0%, #F97316 100%)',
-            image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600'
+            image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600'
         },
         {
             icon: <FaBuilding />,
@@ -36,7 +36,7 @@ const Industries = () => {
             description: 'Showcase properties with stunning visuals and targeted marketing.',
             features: ['Property Videography', 'Virtual Tours', 'Lead Generation', 'Drone Photography'],
             gradient: 'linear-gradient(135deg, #06B6D4 0%, #0EA5E9 100%)',
-            image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600'
+            image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600'
         },
         {
             icon: <FaHotel />,
@@ -45,7 +45,7 @@ const Industries = () => {
             description: 'Attract guests with mouthwatering visuals and engaging campaigns.',
             features: ['Food Photography', 'Ambiance Videos', 'Review Management', 'Influencer Marketing'],
             gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600'
+            image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600'
         }
     ];
 

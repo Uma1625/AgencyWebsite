@@ -1,0 +1,206 @@
+/* ============================================
+   3D GLOBE BACKGROUND COMPONENT
+   Visible rotating arcs like Contact page
+   ============================================ */
+
+.globe-3d-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Base Gradient */
+.globe-base-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            #0A0A12 0%,
+            #120A0A 30%,
+            #1A0808 50%,
+            #120A0A 70%,
+            #0A0A12 100%);
+}
+
+/* Globe Container */
+.globe-container {
+    position: absolute;
+    width: 1400px;
+    height: 1400px;
+}
+
+/* Position Variants */
+.globe-position-left .globe-container {
+    top: -20%;
+    left: -40%;
+}
+
+.globe-position-right .globe-container {
+    top: -20%;
+    right: -40%;
+    left: auto;
+}
+
+.globe-position-center .globe-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.globe-position-bottom .globe-container {
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+}
+
+.globe-position-top-right .globe-container {
+    top: -30%;
+    right: -30%;
+    left: auto;
+}
+
+.globe-position-bottom-left .globe-container {
+    bottom: -40%;
+    left: -30%;
+    top: auto;
+}
+
+/* Globe Arcs - Visible rotating rings */
+.globe-arc-3d {
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+}
+
+.globe-arc-3d.arc-outer {
+    inset: 0;
+    border-width: 3px;
+}
+
+.globe-arc-3d.arc-middle {
+    inset: 80px;
+    border-width: 2px;
+}
+
+.globe-arc-3d.arc-inner {
+    inset: 160px;
+    border-width: 2px;
+}
+
+/* Center Glow */
+.globe-center-glow {
+    position: absolute;
+    inset: 200px;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+/* Floating Particles */
+.globe-particles {
+    position: absolute;
+    inset: 0;
+}
+
+.globe-particle {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+}
+
+/* Grid Overlay */
+.globe-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(220, 38, 38, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220, 38, 38, 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.5;
+}
+
+/* Additional Glow Effects */
+.globe-3d-bg::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: pulse-glow 6s ease-in-out infinite;
+}
+
+.globe-position-left::before {
+    top: 10%;
+    left: 5%;
+    background: rgba(220, 38, 38, 0.2);
+}
+
+.globe-position-right::before {
+    top: 10%;
+    right: 5%;
+    left: auto;
+    background: rgba(220, 38, 38, 0.2);
+}
+
+.globe-position-center::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(220, 38, 38, 0.25);
+}
+
+.globe-position-bottom::before {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    background: rgba(220, 38, 38, 0.2);
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .globe-container {
+        width: 800px;
+        height: 800px;
+    }
+
+    .globe-position-left .globe-container {
+        left: -60%;
+    }
+
+    .globe-position-right .globe-container {
+        right: -60%;
+    }
+
+    .globe-arc-3d.arc-middle {
+        inset: 50px;
+    }
+
+    .globe-arc-3d.arc-inner {
+        inset: 100px;
+    }
+
+    .globe-center-glow {
+        inset: 120px;
+    }
+
+    .globe-grid-overlay {
+        background-size: 50px 50px;
+    }
+}

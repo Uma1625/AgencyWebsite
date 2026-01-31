@@ -30,6 +30,7 @@ const Footer = () => {
         { path: '/industries', label: 'Industries' },
         { path: '/results', label: 'Results' },
         { path: '/contact', label: 'Contact' },
+        { path: '/refund', label: 'Refund Policy' },
     ];
 
     const services = [
@@ -123,9 +124,9 @@ const Footer = () => {
                                         className="footer-logo-3d"
                                         animate={{
                                             boxShadow: [
-                                                '0 0 25px rgba(99, 102, 241, 0.3)',
-                                                '0 0 45px rgba(99, 102, 241, 0.6)',
-                                                '0 0 25px rgba(99, 102, 241, 0.3)'
+                                                '0 0 25px rgba(220, 38, 38, 0.3)',
+                                                '0 0 45px rgba(220, 38, 38, 0.6)',
+                                                '0 0 25px rgba(220, 38, 38, 0.3)'
                                             ]
                                         }}
                                         transition={{ duration: 3, repeat: Infinity }}
@@ -142,7 +143,7 @@ const Footer = () => {
                                                 initial={{ opacity: 0 }}
                                                 whileInView={{ opacity: 1 }}
                                                 transition={{ delay: idx * 0.05 }}
-                                                whileHover={{ color: '#a78bfa', scale: 1.1 }}
+                                                whileHover={{ color: '#EF4444', scale: 1.1 }}
                                             >
                                                 {letter}
                                             </motion.span>
@@ -151,8 +152,8 @@ const Footer = () => {
                                 </div>
                             </Link>
                             <p className="footer-description">
-                                Transforming businesses through innovative digital marketing,
-                                stunning visuals, and strategic growth solutions.
+                                Abhivrudhi Agency is a performance marketing agency helping businesses
+                                grow through data-driven advertising and scalable growth strategies.
                             </p>
                             <div className="footer-socials">
                                 {socials.map((social, index) => (
@@ -260,24 +261,24 @@ const Footer = () => {
                             <h4 className="footer-title">Contact Us</h4>
                             <div className="footer-contact">
                                 <motion.a
-                                    href="mailto:hello@abhivrudi.com"
+                                    href="mailto:Vinay@abhivrudhiagency.com"
                                     className="contact-item"
                                     whileHover={{ x: 10 }}
                                 >
                                     <div className="contact-icon-wrapper">
                                         <HiMail className="contact-icon" />
                                     </div>
-                                    <span>hello@abhivrudi.com</span>
+                                    <span>Vinay@abhivrudhiagency.com</span>
                                 </motion.a>
                                 <motion.a
-                                    href="tel:+919876543210"
+                                    href="tel:+917416506826"
                                     className="contact-item"
                                     whileHover={{ x: 10 }}
                                 >
                                     <div className="contact-icon-wrapper">
                                         <HiPhone className="contact-icon" />
                                     </div>
-                                    <span>+91 98765 43210</span>
+                                    <span>+91 74165 06826</span>
                                 </motion.a>
                                 <motion.div
                                     className="contact-item"
@@ -286,7 +287,13 @@ const Footer = () => {
                                     <div className="contact-icon-wrapper">
                                         <HiLocationMarker className="contact-icon" />
                                     </div>
-                                    <span>Hyderabad, India</span>
+                                    <span>Venkata Nilayam, Alwal, Hyderabad, Telangana 500010</span>
+                                </motion.div>
+                                <motion.div
+                                    className="contact-item working-hours"
+                                    whileHover={{ x: 10 }}
+                                >
+                                    <span>Mon - Sat: 10 AM - 7 PM IST</span>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -309,7 +316,13 @@ const Footer = () => {
                         <div className="footer-legal">
                             <Link to="/privacy" className="legal-link">Privacy Policy</Link>
                             <span className="separator">•</span>
-                            <Link to="/terms" className="legal-link">Terms of Service</Link>
+                            <Link to="/terms" className="legal-link">Terms</Link>
+                            <span className="separator">•</span>
+                            <Link to="/disclaimer" className="legal-link">Disclaimer</Link>
+                            <span className="separator">•</span>
+                            <Link to="/refund" className="legal-link">Refund Policy</Link>
+                            <span className="separator">•</span>
+                            <Link to="/contact" className="legal-link">Contact</Link>
                         </div>
                     </motion.div>
                 </div>

@@ -73,9 +73,9 @@ const Navbar = () => {
                                 animate={{
                                     rotateY: [0, 10, 0, -10, 0],
                                     boxShadow: [
-                                        '0 0 25px rgba(99, 102, 241, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.2)',
-                                        '0 0 50px rgba(99, 102, 241, 0.7), inset 0 0 30px rgba(139, 92, 246, 0.3)',
-                                        '0 0 25px rgba(99, 102, 241, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.2)'
+                                        '0 0 25px rgba(220, 38, 38, 0.4), inset 0 0 20px rgba(239, 68, 68, 0.2)',
+                                        '0 0 50px rgba(220, 38, 38, 0.7), inset 0 0 30px rgba(239, 68, 68, 0.3)',
+                                        '0 0 25px rgba(220, 38, 38, 0.4), inset 0 0 20px rgba(239, 68, 68, 0.2)'
                                     ]
                                 }}
                                 transition={{ duration: 3, repeat: Infinity }}
@@ -155,7 +155,7 @@ const Navbar = () => {
                         Call Now
                     </motion.a>
                     <motion.a
-                        href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
+                        href="https://wa.me/917416506826?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-whatsapp navbar-btn"
@@ -240,7 +240,7 @@ const Navbar = () => {
                                     </button>
                                 </a>
                                 <a
-                                    href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
+                                    href="https://wa.me/917416506826?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mobile-cta"

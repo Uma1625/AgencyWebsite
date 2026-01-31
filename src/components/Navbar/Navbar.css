@@ -75,8 +75,8 @@
     width: 60px;
     height: 60px;
     border: 2px solid transparent;
-    border-top-color: rgba(99, 102, 241, 0.5);
-    border-right-color: rgba(139, 92, 246, 0.3);
+    border-top-color: rgba(220, 38, 38, 0.5);
+    border-right-color: rgba(239, 68, 68, 0.3);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -86,7 +86,7 @@
     position: absolute;
     width: 50px;
     height: 50px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.4) 0%, transparent 70%);
     border-radius: 50%;
     filter: blur(10px);
     pointer-events: none;
@@ -97,7 +97,7 @@
     position: relative;
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #DC2626 100%);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -171,9 +171,9 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #6366f1 0%, #a78bfa 50%, #6366f1 100%);
+    background: linear-gradient(90deg, #DC2626 0%, #FB923C 50%, #DC2626 100%);
     transform-origin: left;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
     border-radius: 2px;
 }
 
@@ -195,7 +195,7 @@
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--text-white);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
 }
 
 .logo-text {
@@ -229,7 +229,7 @@
 .link-glow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
     opacity: 0;
     transition: opacity var(--transition-fast);
 }
@@ -311,7 +311,7 @@
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.1);
     border: 1px solid var(--border-glow);
     font-size: 1.6rem;
     color: var(--text-white);
@@ -368,7 +368,7 @@
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.1);
     border-color: var(--border-glow);
     color: var(--text-white);
 }

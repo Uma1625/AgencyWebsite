@@ -1,0 +1,286 @@
+/* ============================================
+   ANIMATED BACKGROUND COMPONENT
+   Universal 3D/Motion Background System
+   ============================================ */
+
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Base Gradient Layer */
+.bg-gradient-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            #0A0A12 0%,
+            #120A0A 30%,
+            #1A0808 50%,
+            #120A0A 70%,
+            #0A0A12 100%);
+}
+
+/* Mesh Gradient Blobs */
+.bg-mesh-layer {
+    position: absolute;
+    inset: 0;
+}
+
+.mesh-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.mesh-blob.blob-1 {
+    width: 600px;
+    height: 600px;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle,
+            rgba(220, 38, 38, 0.25) 0%,
+            rgba(185, 28, 28, 0.1) 50%,
+            transparent 70%);
+}
+
+.mesh-blob.blob-2 {
+    width: 500px;
+    height: 500px;
+    bottom: 10%;
+    right: -5%;
+    background: radial-gradient(circle,
+            rgba(249, 115, 22, 0.2) 0%,
+            rgba(239, 68, 68, 0.08) 50%,
+            transparent 70%);
+}
+
+.mesh-blob.blob-3 {
+    width: 400px;
+    height: 400px;
+    top: 40%;
+    left: 30%;
+    background: radial-gradient(circle,
+            rgba(239, 68, 68, 0.15) 0%,
+            rgba(220, 38, 38, 0.05) 50%,
+            transparent 70%);
+}
+
+/* Particles Layer */
+.bg-particles-layer {
+    position: absolute;
+    inset: 0;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle,
+            rgba(239, 68, 68, 0.8) 0%,
+            rgba(220, 38, 38, 0.4) 50%,
+            transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+/* Geometric Shapes */
+.bg-geometric-layer {
+    position: absolute;
+    inset: 0;
+}
+
+.geo-shape {
+    position: absolute;
+    border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.geo-circle {
+    border-radius: 50%;
+}
+
+.geo-square {
+    border-radius: 4px;
+}
+
+.geo-triangle {
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 52px solid rgba(220, 38, 38, 0.15);
+    background: none !important;
+    border-top: none;
+}
+
+.geo-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: rgba(220, 38, 38, 0.1);
+}
+
+/* Wave Animation */
+.bg-waves-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: #020617;
+    border-radius: 40%;
+    animation: wave-rotate 20s linear infinite;
+}
+
+.wave-1 {
+    background: linear-gradient(180deg,
+            transparent 40%,
+            rgba(220, 38, 38, 0.03) 100%);
+    animation-duration: 25s;
+}
+
+.wave-2 {
+    background: linear-gradient(180deg,
+            transparent 50%,
+            rgba(239, 68, 68, 0.02) 100%);
+    animation-duration: 20s;
+    animation-direction: reverse;
+}
+
+.wave-3 {
+    background: linear-gradient(180deg,
+            transparent 60%,
+            rgba(249, 115, 22, 0.02) 100%);
+    animation-duration: 30s;
+}
+
+@keyframes wave-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Grid Lines */
+.bg-grid-layer {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.5;
+}
+
+/* Glow Spots */
+.glow-spot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: glow-pulse 8s ease-in-out infinite;
+}
+
+.glow-1 {
+    width: 400px;
+    height: 400px;
+    top: 20%;
+    right: 10%;
+    background: rgba(220, 38, 38, 0.15);
+}
+
+.glow-2 {
+    width: 300px;
+    height: 300px;
+    bottom: 20%;
+    left: 15%;
+    background: rgba(249, 115, 22, 0.1);
+    animation-delay: 4s;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Theme Variations */
+.animated-bg--mesh .bg-particles-layer,
+.animated-bg--mesh .bg-geometric-layer,
+.animated-bg--mesh .bg-waves-layer {
+    display: none;
+}
+
+.animated-bg--particles .bg-geometric-layer,
+.animated-bg--particles .bg-waves-layer {
+    display: none;
+}
+
+.animated-bg--geometric .bg-particles-layer,
+.animated-bg--geometric .bg-waves-layer {
+    display: none;
+}
+
+.animated-bg--waves .bg-particles-layer,
+.animated-bg--waves .bg-geometric-layer {
+    display: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .mesh-blob {
+        filter: blur(60px);
+    }
+
+    .mesh-blob.blob-1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .mesh-blob.blob-2 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .mesh-blob.blob-3 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .particle {
+        display: none;
+    }
+
+    .particle:nth-child(-n+10) {
+        display: block;
+    }
+
+    .geo-shape {
+        display: none;
+    }
+
+    .geo-shape:nth-child(-n+6) {
+        display: block;
+    }
+
+    .bg-grid-layer {
+        background-size: 40px 40px;
+    }
+}

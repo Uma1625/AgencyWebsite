@@ -18,11 +18,8 @@
 .results-bg-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,
-            #020617 0%,
-            #041510 40%,
-            #052515 70%,
-            #020617 100%);
+    /* Using global 3D background */
+    background: #020617;
 }
 
 /* Wave Globe - Bottom Center */
@@ -46,7 +43,7 @@
     border-color: rgba(34, 197, 94, 0.5);
     background: radial-gradient(circle at 50% 30%,
             rgba(16, 185, 129, 0.35) 0%,
-            rgba(34, 197, 94, 0.15) 40%,
+            rgba(34, 197, 94, 0.50) 40%,
             transparent 70%);
 }
 
@@ -77,7 +74,7 @@
             rgba(34, 197, 94, 0.5) 0%,
             rgba(16, 185, 129, 0.25) 40%,
             transparent 70%);
-    filter: blur(100px);
+    filter: blur(80px);
     animation: results-glow-pulse 8s ease-in-out infinite;
 }
 
@@ -201,8 +198,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            rgba(15, 15, 26, 0.85) 0%,
-            rgba(15, 15, 26, 0.9) 100%);
+            rgba(15, 15, 26, 0.5) 0%,
+            rgba(15, 15, 26, 0.6) 100%);
 }
 
 /* Video Hero Container */
@@ -219,14 +216,15 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 1;
 }
 
 .hero-video-container .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            rgba(15, 15, 26, 0.85) 0%,
-            rgba(15, 15, 26, 0.9) 100%);
+            rgba(15, 15, 26, 0.5) 0%,
+            rgba(15, 15, 26, 0.6) 100%);
     z-index: 1;
 }
 
@@ -239,13 +237,13 @@
 .bokeh-circle {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(80px);
 }
 
 .bokeh-1 {
     width: 400px;
     height: 400px;
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(220, 38, 38, 0.55);
     top: -100px;
     right: -50px;
 }
@@ -269,7 +267,7 @@
     align-items: center;
     gap: 10px;
     padding: 12px 28px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.45);
     border: 1px solid var(--border-glow);
     border-radius: var(--radius-full);
     color: var(--primary-light);
@@ -318,14 +316,14 @@
     color: var(--text-muted);
     font-style: italic;
     padding: 20px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.45);
     border-radius: var(--radius-md);
     border-left: 4px solid var(--primary);
 }
 
 /* Case Studies Section */
 .case-studies-section {
-    background: var(--bg-dark);
+    background: transparent;
 }
 
 .case-studies-grid {
@@ -364,7 +362,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 24px 32px;
-    background: rgba(99, 102, 241, 0.05);
+    background: rgba(30, 30, 40, 0.4);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-dark);
 }
 
@@ -404,7 +403,7 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.45);
     border-radius: var(--radius-full);
     font-size: 0.85rem;
     color: var(--text-light);
@@ -416,7 +415,7 @@
 
 /* Testimonials */
 .testimonials-section {
-    background: var(--bg-darker);
+    background: transparent;
 }
 
 .testimonials-grid {
@@ -481,13 +480,18 @@
 /* CTA Section */
 .results-cta {
     padding: 100px 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: transparent;
 }
 
 .results-cta .cta-content {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    background: rgba(30, 30, 40, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .results-cta h2 {

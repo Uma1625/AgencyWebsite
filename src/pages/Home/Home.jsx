@@ -38,6 +38,9 @@ import {
 import { useState } from 'react';
 import './Home.css';
 import CTASection from '../../components/CTASection/CTASection';
+import ProcessFlow from '../../components/ProcessFlow/ProcessFlow';
+import FAQSection from '../../components/FAQSection/FAQSection';
+import ToolsStack from '../../components/ToolsStack/ToolsStack';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,10 +133,10 @@ const Home = () => {
     ];
 
     const stats = [
-        { number: 400, suffix: '+', label: 'Leads/Month' },
-        { number: 130, prefix: '₹', label: 'Avg Cost per Lead' },
-        { number: 50, suffix: '+', label: 'Happy Clients' },
-        { number: 99, suffix: '%', label: 'Client Satisfaction' }
+        { number: 2000, suffix: '+', label: 'Leads Generated' },
+        { number: 150, prefix: '₹', suffix: ' avg', label: 'Cost per Lead' },
+        { number: 500, suffix: '+', label: 'Appointments Booked' },
+        { number: 50, suffix: '+', label: 'Happy Clients' }
     ];
 
     const testimonials = [
@@ -307,7 +310,7 @@ const Home = () => {
                             <Link to="/contact">
                                 <motion.button
                                     className="btn btn-primary btn-glow"
-                                    whileHover={{ scale: 1.05, boxShadow: '0 20px 50px rgba(99, 102, 241, 0.5)' }}
+                                    whileHover={{ scale: 1.05, boxShadow: '0 20px 50px rgba(220, 38, 38, 0.5)' }}
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     Get Free Growth Audit
@@ -409,7 +412,7 @@ const Home = () => {
                         viewport={{ once: true }}
                     >
                         <span className="subtitle"><FaQuoteLeft /> Success Stories</span>
-                        <h2>What Our <span className="gold-text">Clients Say</span></h2>
+                        <h2>What Our Clients Say About <span className="gold-text">Abhivrudhi</span></h2>
                         <p>Real feedback from businesses we've helped grow</p>
                     </motion.div>
 
@@ -587,7 +590,7 @@ const Home = () => {
                                     }}
                                     whileHover={{
                                         scale: 1.02,
-                                        boxShadow: "0 20px 50px rgba(99, 102, 241, 0.3)"
+                                        boxShadow: "0 20px 50px rgba(220, 38, 38, 0.3)"
                                     }}
                                 >
                                     <div className="stacked-card-content">
@@ -665,6 +668,15 @@ const Home = () => {
 
             {/* CTA Section - Split Layout with 3D Animation */}
             <CTASection />
+
+            {/* 5-Step Process Flow */}
+            <ProcessFlow />
+
+            {/* Tools & Technology Stack */}
+            <ToolsStack />
+
+            {/* FAQs */}
+            <FAQSection />
         </div>
     );
 };

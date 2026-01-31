@@ -5,6 +5,19 @@ import './Privacy.css';
 const Privacy = () => {
     return (
         <div className="privacy-page">
+            {/* 3D Globe Background with Visible Arcs */}
+            <div className="legal-3d-bg">
+                <div className="legal-gradient"></div>
+                <div className="legal-half-globe">
+                    <div className="legal-arc arc-1"></div>
+                    <div className="legal-arc arc-2"></div>
+                    <div className="legal-arc arc-3"></div>
+                </div>
+                <div className="legal-glow glow-1"></div>
+                <div className="legal-glow glow-2"></div>
+                <div className="legal-grid-overlay"></div>
+            </div>
+
             {/* Hero Section */}
             <section className="legal-hero">
                 <div className="container">
@@ -203,9 +216,10 @@ const Privacy = () => {
                             </p>
                             <div className="contact-box">
                                 <p><strong>Abhivrudhi Agency</strong></p>
-                                <p>Email: hello@abhivrudhi.com</p>
-                                <p>Phone: +91 98765 43210</p>
-                                <p>Location: Hyderabad, India</p>
+                                <p>Email: Vinay@abhivrudhiagency.com</p>
+                                <p>Phone: +91 7416506826</p>
+                                <p>Address: Venkata Nilayam, Alwal, Hyderabad, Telangana 500010</p>
+                                <p>Working Hours: Mon - Sat, 10 AM - 7 PM IST</p>
                             </div>
                         </div>
                     </motion.div>

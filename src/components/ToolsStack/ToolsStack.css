@@ -1,0 +1,126 @@
+/* Tools Stack Section */
+.tools-stack-section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+    background: rgba(10, 10, 18, 0.5);
+}
+
+.tools-stack-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tools-stack-section .section-label {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.tools-stack-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-white);
+    margin-bottom: 16px;
+}
+
+.tools-stack-section .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Tools Grid - 2 columns on desktop */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tool-category {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+}
+
+.tool-category h3 {
+    font-size: 1.2rem;
+    color: var(--text-white);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.tools-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tool-item:hover {
+    border-color: var(--primary);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+}
+
+.tool-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.tool-item span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Tablet - still 2 columns */
+@media (max-width: 1024px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .tool-category {
+        padding: 24px;
+    }
+}
+
+/* Mobile - single column */
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-list {
+        grid-template-columns: 1fr;
+    }
+}

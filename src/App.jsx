@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -15,6 +16,10 @@ import Results from './pages/Results/Results';
 import Contact from './pages/Contact/Contact';
 import Privacy from './pages/Privacy/Privacy';
 import Terms from './pages/Terms/Terms';
+import Disclaimer from './pages/Disclaimer/Disclaimer';
+import Refund from './pages/Refund/Refund';
+import Blog from './pages/Blog/Blog';
+import Insights from './pages/Insights/Insights';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -56,6 +61,10 @@ const AnimatedRoutes = () => {
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/privacy" element={<PageWrapper><Privacy /></PageWrapper>} />
         <Route path="/terms" element={<PageWrapper><Terms /></PageWrapper>} />
+        <Route path="/disclaimer" element={<PageWrapper><Disclaimer /></PageWrapper>} />
+        <Route path="/refund" element={<PageWrapper><Refund /></PageWrapper>} />
+        <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
+        <Route path="/insights" element={<PageWrapper><Insights /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );
@@ -71,9 +80,11 @@ function App() {
           <AnimatedRoutes />
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );
 }
 
 export default App;
+

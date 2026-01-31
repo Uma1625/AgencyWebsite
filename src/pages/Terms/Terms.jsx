@@ -201,9 +201,9 @@ const Terms = () => {
                             </p>
                             <div className="contact-box">
                                 <p><strong>Abhivrudhi Agency</strong></p>
-                                <p>Email: hello@abhivrudhi.com</p>
-                                <p>Phone: +91 98765 43210</p>
-                                <p>Location: Hyderabad, India</p>
+                                <p>Email: Vinay@abhivrudhiagency.com</p>
+                                <p>Phone: +91 7416506826</p>
+                                <p>Address: Venkata Nilayam, Alwal, Hyderabad, Telangana 500010</p>
                             </div>
                         </div>
                     </motion.div>

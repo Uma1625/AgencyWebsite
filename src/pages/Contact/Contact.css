@@ -24,11 +24,8 @@
 .globe-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,
-            #020617 0%,
-            #0a1525 40%,
-            #0c1a30 70%,
-            #020617 100%);
+    /* Using global 3D background */
+    background: #020617;
 }
 
 /* Main Half Globe - Large Curved Shape */
@@ -52,10 +49,10 @@
     left: 0;
     width: 1400px;
     height: 1400px;
-    border-color: rgba(30, 80, 150, 0.4);
+    border-color: rgba(220, 38, 38, 0.4);
     background: radial-gradient(circle at 70% 70%,
-            rgba(15, 50, 100, 0.5) 0%,
-            rgba(10, 40, 80, 0.3) 40%,
+            rgba(185, 28, 28, 0.5) 0%,
+            rgba(127, 29, 29, 0.3) 40%,
             transparent 70%);
 }
 
@@ -64,7 +61,7 @@
     left: 80px;
     width: 1200px;
     height: 1200px;
-    border-color: rgba(40, 100, 180, 0.3);
+    border-color: rgba(239, 68, 68, 0.65);
 }
 
 .globe-arc.arc-inner {
@@ -72,7 +69,7 @@
     left: 160px;
     width: 1000px;
     height: 1000px;
-    border-color: rgba(50, 120, 200, 0.2);
+    border-color: rgba(248, 113, 113, 0.2);
 }
 
 /* Globe Glow Effect */
@@ -83,8 +80,8 @@
     width: 900px;
     height: 900px;
     background: radial-gradient(circle,
-            rgba(30, 80, 160, 0.4) 0%,
-            rgba(20, 60, 120, 0.2) 40%,
+            rgba(220, 38, 38, 0.4) 0%,
+            rgba(185, 28, 28, 0.2) 40%,
             transparent 70%);
     filter: blur(60px);
 }
@@ -99,7 +96,7 @@
     position: absolute;
     width: 3px;
     height: 3px;
-    background: rgba(100, 150, 220, 0.6);
+    background: rgba(248, 113, 113, 0.6);
     border-radius: 50%;
     animation: float-particle 15s infinite ease-in-out;
 }
@@ -155,10 +152,10 @@
     align-items: center;
     gap: 8px;
     padding: 10px 24px;
-    background: rgba(30, 80, 150, 0.2);
-    border: 1px solid rgba(50, 100, 180, 0.3);
+    background: rgba(220, 38, 38, 0.55);
+    border: 1px solid rgba(239, 68, 68, 0.65);
     border-radius: 50px;
-    color: #60a5fa;
+    color: #EF4444;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -178,7 +175,7 @@
 }
 
 .gradient-word {
-    background: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
+    background: linear-gradient(135deg, #EF4444 0%, #F97316 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -220,7 +217,7 @@
 .form-group select {
     padding: 16px 18px;
     background: rgba(15, 30, 60, 0.6);
-    border: 1px solid rgba(60, 100, 160, 0.25);
+    border: 1px solid rgba(239, 68, 68, 0.60);
     border-radius: 10px;
     color: #ffffff;
     font-size: 0.95rem;
@@ -257,7 +254,7 @@
     justify-content: space-between;
     padding: 18px 20px;
     background: rgba(15, 30, 60, 0.4);
-    border: 1px solid rgba(60, 100, 160, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.55);
     border-radius: 12px;
 }
 
@@ -312,7 +309,7 @@
 }
 
 .toggle-switch input:checked+.slider {
-    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #DC2626 100%);
 }
 
 .toggle-switch input:checked+.slider::before {
@@ -323,7 +320,7 @@
 .submit-button {
     width: 100%;
     padding: 18px 32px;
-    background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
+    background: linear-gradient(135deg, #F97316 0%, #DC2626 50%, #DC2626 100%);
     color: #ffffff;
     font-size: 1rem;
     font-weight: 700;
@@ -346,7 +343,7 @@
 }
 
 .form-agreement a {
-    color: #60a5fa;
+    color: #EF4444;
     text-decoration: none;
     font-weight: 500;
 }
@@ -421,7 +418,7 @@
 .logo-box {
     width: 28px;
     height: 28px;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -439,7 +436,7 @@
 
 .start-btn {
     padding: 8px 14px;
-    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #DC2626 100%);
     color: #fff;
     font-size: 0.7rem;
     font-weight: 600;
@@ -455,7 +452,7 @@
 }
 
 .preview-badge {
-    color: #60a5fa;
+    color: #EF4444;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -525,7 +522,7 @@
     margin-top: 60px;
     padding: 28px 36px;
     background: rgba(15, 30, 60, 0.5);
-    border: 1px solid rgba(60, 100, 160, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.55);
     border-radius: 16px;
     backdrop-filter: blur(10px);
 }
@@ -544,7 +541,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #60a5fa;
+    color: #EF4444;
     font-size: 1.2rem;
 }
 
@@ -586,7 +583,7 @@
 }
 
 .social-btn:hover {
-    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #DC2626 100%);
     border-color: transparent;
     color: #fff;
 }

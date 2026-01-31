@@ -29,10 +29,9 @@ const About = () => {
     ];
 
     const team = [
-        { name: 'Rahul Sharma', role: 'Founder & CEO', color: '#6366F1' },
-        { name: 'Priya Patel', role: 'Creative Director', color: '#F59E0B' },
-        { name: 'Amit Kumar', role: 'Video Production Lead', color: '#06B6D4' },
-        { name: 'Sneha Reddy', role: 'Digital Marketing Head', color: '#10B981' }
+        { name: 'Vinay', role: 'Founder & Ads Expert', color: '#DC2626', description: 'Performance marketing specialist with expertise in Google Ads and Meta Ads. Passionate about helping businesses grow through data-driven advertising strategies.' },
+        { name: 'Bhanu', role: 'Creative Head', color: '#F97316', description: 'Creative strategist leading our design and content team. Turns complex marketing messages into compelling visual stories.' },
+        { name: 'Sunny', role: 'Video Editor', color: '#06B6D4', description: 'Video production expert creating engaging content that captures attention and drives conversions.' }
     ];
 
     const milestones = [
@@ -229,11 +228,28 @@ const About = () => {
                         <span className="subtitle">Our Team</span>
                         <h2>Meet the <span className="gradient-text">Experts</span></h2>
                     </div>
-                    <div className="team-grid">
+
+                    {/* Founder Note */}
+                    <motion.div
+                        className="founder-note"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <p>
+                            "Abhivrudhi Agency is a performance marketing agency helping businesses grow through
+                            data-driven advertising. We believe in transparency, honest communication, and delivering
+                            measurable results. Our approach is performance-driven, optimisation-based, and focused on
+                            scalable growth."
+                        </p>
+                        <span className="founder-name">— Vinay, Founder</span>
+                    </motion.div>
+
+                    <div className="team-grid enhanced">
                         {team.map((member, index) => (
                             <motion.div
                                 key={index}
-                                className="team-card card"
+                                className="team-card card enhanced"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={teamInView ? { opacity: 1, scale: 1 } : {}}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -244,6 +260,8 @@ const About = () => {
                                 </div>
                                 <h4>{member.name}</h4>
                                 <span className="team-role" style={{ color: member.color }}>{member.role}</span>
+                                <p className="team-description">{member.description}</p>
+                                <span className="photo-placeholder">📷 Photo coming soon</span>
                             </motion.div>
                         ))}
                     </div>

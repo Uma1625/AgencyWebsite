@@ -245,21 +245,22 @@ const Contact = () => {
                             <div className="info-icon"><HiMail /></div>
                             <div className="info-text">
                                 <span className="info-label">Email Us</span>
-                                <span className="info-value">hello@abhivrudhi.com</span>
+                                <span className="info-value">Vinay@abhivrudhiagency.com</span>
                             </div>
                         </div>
                         <div className="info-item">
                             <div className="info-icon"><HiPhone /></div>
                             <div className="info-text">
                                 <span className="info-label">Call Us</span>
-                                <span className="info-value">+91 98765 43210</span>
+                                <span className="info-value">+91 74165 06826</span>
                             </div>
                         </div>
                         <div className="info-item">
                             <div className="info-icon"><HiLocationMarker /></div>
                             <div className="info-text">
                                 <span className="info-label">Visit Us</span>
-                                <span className="info-value">Hyderabad, India</span>
+                                <span className="info-value">venkata nilayam, alwal, Hyderabad, 500010</span>
+                                <span className="info-value" style={{ fontSize: '0.8rem', opacity: 0.7, marginTop: '4px' }}>Mon-Sat: 10am - 7pm</span>
                             </div>
                         </div>
                         <div className="social-links">

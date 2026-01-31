@@ -128,7 +128,7 @@ const CTASection = () => {
                                 </motion.button>
                             </Link>
                             <motion.a
-                                href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
+                                href="https://wa.me/917416506826?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-cta-green"
@@ -197,9 +197,9 @@ const CTASection = () => {
                                     className="brand-logo-inner-3d"
                                     animate={{
                                         boxShadow: [
-                                            "0 0 60px rgba(139, 92, 246, 0.4), 0 0 100px rgba(99, 102, 241, 0.2), inset 0 0 30px rgba(255,255,255,0.1)",
-                                            "0 0 100px rgba(139, 92, 246, 0.6), 0 0 150px rgba(99, 102, 241, 0.3), inset 0 0 50px rgba(255,255,255,0.2)",
-                                            "0 0 60px rgba(139, 92, 246, 0.4), 0 0 100px rgba(99, 102, 241, 0.2), inset 0 0 30px rgba(255,255,255,0.1)"
+                                            "0 0 60px rgba(239, 68, 68, 0.4), 0 0 100px rgba(220, 38, 38, 0.2), inset 0 0 30px rgba(255,255,255,0.1)",
+                                            "0 0 100px rgba(239, 68, 68, 0.6), 0 0 150px rgba(220, 38, 38, 0.3), inset 0 0 50px rgba(255,255,255,0.2)",
+                                            "0 0 60px rgba(239, 68, 68, 0.4), 0 0 100px rgba(220, 38, 38, 0.2), inset 0 0 30px rgba(255,255,255,0.1)"
                                         ]
                                     }}
                                     transition={{ duration: 3, repeat: Infinity }}
