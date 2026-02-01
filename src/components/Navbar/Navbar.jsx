@@ -16,7 +16,8 @@ const Navbar = () => {
         { path: '/services', label: 'Services' },
         { path: '/industries', label: 'Industries' },
         { path: '/results', label: 'Results' },
-        { path: '/contact', label: 'Contact' },
+        { path: '/blog', label: 'Blogs' },
+        { path: '/insights', label: 'Insights' },
     ];
 
     useEffect(() => {
@@ -142,29 +143,20 @@ const Navbar = () => {
                             </Link>
                         </motion.div>
                     ))}
+
                 </div>
 
-                <div className="navbar-cta">
-                    <motion.a
-                        href="tel:+919876543210"
-                        className="btn btn-call navbar-btn"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                <div className="navbar-actions">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 }}
                     >
-                        <HiPhone className="btn-icon" />
-                        Call Now
-                    </motion.a>
-                    <motion.a
-                        href="https://wa.me/917416506826?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-whatsapp navbar-btn"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <FaWhatsapp className="btn-icon" />
-                        Free Audit
-                    </motion.a>
+                        <Link to="/contact" className="btn btn-contact navbar-cta-btn">
+                            <span className="btn-text">Contact Us</span>
+                            <span className="btn-shine"></span>
+                        </Link>
+                    </motion.div>
                 </div>
 
                 <motion.button
@@ -233,23 +225,11 @@ const Navbar = () => {
                                 transition={{ delay: 0.3 }}
                                 className="mobile-cta-group"
                             >
-                                <a href="tel:+919876543210" className="mobile-cta">
-                                    <button className="btn btn-call">
-                                        <HiPhone className="btn-icon" />
-                                        Call Now
+                                <Link to="/contact" className="mobile-cta">
+                                    <button className="btn btn-contact">
+                                        Contact Us
                                     </button>
-                                </a>
-                                <a
-                                    href="https://wa.me/917416506826?text=Hi%2C%20I%20want%20a%20free%20growth%20audit"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mobile-cta"
-                                >
-                                    <button className="btn btn-whatsapp">
-                                        <FaWhatsapp className="btn-icon" />
-                                        Free Audit
-                                    </button>
-                                </a>
+                                </Link>
                             </motion.div>
                         </div>
                     </motion.div>

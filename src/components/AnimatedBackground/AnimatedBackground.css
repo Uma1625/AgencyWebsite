@@ -16,11 +16,10 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            #0A0A12 0%,
-            #120A0A 30%,
-            #1A0808 50%,
-            #120A0A 70%,
-            #0A0A12 100%);
+            #1A0808 0%,
+            #2D0F0F 30%,
+            #1A0808 60%,
+            #0A0404 100%);
 }
 
 /* Mesh Gradient Blobs */
@@ -41,8 +40,8 @@
     top: -10%;
     left: -10%;
     background: radial-gradient(circle,
-            rgba(220, 38, 38, 0.25) 0%,
-            rgba(185, 28, 28, 0.1) 50%,
+            rgba(220, 38, 38, 0.1) 0%,
+            rgba(185, 28, 28, 0.05) 50%,
             transparent 70%);
 }
 
@@ -52,8 +51,8 @@
     bottom: 10%;
     right: -5%;
     background: radial-gradient(circle,
-            rgba(249, 115, 22, 0.2) 0%,
-            rgba(239, 68, 68, 0.08) 50%,
+            rgba(249, 115, 22, 0.08) 0%,
+            rgba(239, 68, 68, 0.03) 50%,
             transparent 70%);
 }
 
@@ -63,8 +62,8 @@
     top: 40%;
     left: 30%;
     background: radial-gradient(circle,
-            rgba(239, 68, 68, 0.15) 0%,
-            rgba(220, 38, 38, 0.05) 50%,
+            rgba(239, 68, 68, 0.06) 0%,
+            rgba(220, 38, 38, 0.02) 50%,
             transparent 70%);
 }
 

@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
-import { HiArrowRight, HiCheckCircle, HiSparkles, HiStar } from 'react-icons/hi';
-import { FaWhatsapp, FaQuoteLeft } from 'react-icons/fa';
+import { HiCheckCircle, HiSparkles, HiStar } from 'react-icons/hi';
+import { FaQuoteLeft } from 'react-icons/fa';
 import './Results.css';
 import CTASection from '../../components/CTASection/CTASection';
+import Premium3DCard from '../../components/Premium3DCard/Premium3DCard';
+import PremiumCarousel from '../../components/PremiumCarousel/PremiumCarousel';
 
 const Results = () => {
     const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -176,49 +177,49 @@ const Results = () => {
                 </div>
             </section>
 
-            {/* Case Studies Grid */}
+            {/* Case Studies Carousel */}
             <section className="case-studies-section section" ref={resultsRef}>
                 <div className="container">
                     <div className="section-header">
                         <span className="subtitle">Our Work</span>
                         <h2>Case <span className="gold-text">Studies</span></h2>
                     </div>
-                    <div className="case-studies-grid">
-                        {caseStudies.map((study, index) => (
-                            <motion.div
-                                key={index}
-                                className="case-study-card card"
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={resultsInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                whileHover={{ y: -10 }}
-                            >
-                                <div className="case-study-header" style={{ background: study.gradient }}>
-                                    <span className="industry-tag">{study.industry}</span>
-                                    <h3>{study.title}</h3>
-                                </div>
-                                <div className="case-study-metrics">
-                                    <div className="metric">
-                                        <span className="metric-value">{study.metrics.leads}</span>
-                                        <span className="metric-label">Leads</span>
+
+                    {/* Replaced Grid with Premium Carousel */}
+                    <div className="case-studies-carousel-container">
+                        <PremiumCarousel
+                            items={caseStudies}
+                            renderItem={(study, index) => (
+                                <Premium3DCard key={index} className="case-study-card-wrapper" glowColor={study.gradient}>
+                                    <div className="case-study-card card">
+                                        <div className="case-study-header" style={{ background: study.gradient }}>
+                                            <span className="industry-tag">{study.industry}</span>
+                                            <h3>{study.title}</h3>
+                                        </div>
+                                        <div className="case-study-metrics">
+                                            <div className="metric">
+                                                <span className="metric-value">{study.metrics.leads}</span>
+                                                <span className="metric-label">Leads</span>
+                                            </div>
+                                            <div className="metric">
+                                                <span className="metric-value">{study.metrics.cpl}</span>
+                                                <span className="metric-label">Cost/Lead</span>
+                                            </div>
+                                            <div className="metric">
+                                                <span className="metric-value">{study.metrics.duration}</span>
+                                                <span className="metric-label">Duration</span>
+                                            </div>
+                                        </div>
+                                        <p className="case-study-description">{study.description}</p>
+                                        <ul className="case-study-features">
+                                            {study.features.map((feature, i) => (
+                                                <li key={i}><HiCheckCircle /> {feature}</li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                    <div className="metric">
-                                        <span className="metric-value">{study.metrics.cpl}</span>
-                                        <span className="metric-label">Cost/Lead</span>
-                                    </div>
-                                    <div className="metric">
-                                        <span className="metric-value">{study.metrics.duration}</span>
-                                        <span className="metric-label">Duration</span>
-                                    </div>
-                                </div>
-                                <p className="case-study-description">{study.description}</p>
-                                <ul className="case-study-features">
-                                    {study.features.map((feature, i) => (
-                                        <li key={i}><HiCheckCircle /> {feature}</li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        ))}
+                                </Premium3DCard>
+                            )}
+                        />
                     </div>
                 </div>
             </section>
@@ -232,29 +233,29 @@ const Results = () => {
                     </div>
                     <div className="testimonials-grid">
                         {testimonials.map((testimonial, index) => (
-                            <motion.div
-                                key={index}
-                                className="testimonial-card card"
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.15 }}
-                                whileHover={{ y: -10 }}
-                            >
-                                <div className="testimonial-rating">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <HiStar key={i} className="star-icon" />
-                                    ))}
-                                </div>
-                                <p className="testimonial-content">"{testimonial.content}"</p>
-                                <div className="testimonial-author">
-                                    <div className="author-avatar">{testimonial.name[0]}</div>
-                                    <div className="author-info">
-                                        <h5>{testimonial.name}</h5>
-                                        <span>{testimonial.role}</span>
+                            <Premium3DCard key={index} className="testimonial-card-wrapper">
+                                <motion.div
+                                    className="testimonial-card card"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                                >
+                                    <div className="testimonial-rating">
+                                        {[...Array(testimonial.rating)].map((_, i) => (
+                                            <HiStar key={i} className="star-icon" />
+                                        ))}
                                     </div>
-                                </div>
-                            </motion.div>
+                                    <p className="testimonial-content">"{testimonial.content}"</p>
+                                    <div className="testimonial-author">
+                                        <div className="author-avatar">{testimonial.name[0]}</div>
+                                        <div className="author-info">
+                                            <h5>{testimonial.name}</h5>
+                                            <span>{testimonial.role}</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </Premium3DCard>
                         ))}
                     </div>
                 </div>

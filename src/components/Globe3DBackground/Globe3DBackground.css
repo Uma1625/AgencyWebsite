@@ -16,11 +16,10 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            #0A0A12 0%,
-            #120A0A 30%,
-            #1A0808 50%,
-            #120A0A 70%,
-            #0A0A12 100%);
+            #1A0808 0%,
+            #2D0F0F 30%,
+            #1A0808 60%,
+            #0A0404 100%);
 }
 
 /* Globe Container */
@@ -114,8 +113,8 @@
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(220, 38, 38, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(220, 38, 38, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(239, 68, 68, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
     background-size: 80px 80px;
     opacity: 0.5;
 }
@@ -134,21 +133,21 @@
 .globe-position-left::before {
     top: 10%;
     left: 5%;
-    background: rgba(220, 38, 38, 0.2);
+    background: rgba(220, 38, 38, 0.08);
 }
 
 .globe-position-right::before {
     top: 10%;
     right: 5%;
     left: auto;
-    background: rgba(220, 38, 38, 0.2);
+    background: rgba(220, 38, 38, 0.08);
 }
 
 .globe-position-center::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(220, 38, 38, 0.25);
+    background: rgba(220, 38, 38, 0.1);
 }
 
 .globe-position-bottom::before {
@@ -156,7 +155,7 @@
     left: 50%;
     transform: translateX(-50%);
     top: auto;
-    background: rgba(220, 38, 38, 0.2);
+    background: rgba(220, 38, 38, 0.08);
 }
 
 @keyframes pulse-glow {

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaChartLine, FaHospital, FaHome, FaGraduationCap, FaShoppingCart, FaBuilding, FaArrowRight } from 'react-icons/fa';
 import './Insights.css';
+import Premium3DCard from '../../components/Premium3DCard/Premium3DCard';
 
 const Insights = () => {
     const industries = [
@@ -117,25 +118,26 @@ const Insights = () => {
 
                     <div className="industry-grid">
                         {industries.map((industry, index) => (
-                            <motion.div
-                                key={industry.name}
-                                className="industry-card"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                <div className="industry-header">
-                                    <div className="industry-icon">{industry.icon}</div>
-                                    <h3>{industry.name}</h3>
-                                    <span className="avg-cpl">Avg CPL: {industry.avgCPL}</span>
-                                </div>
-                                <ul className="industry-insights">
-                                    {industry.insights.map((insight, i) => (
-                                        <li key={i}>{insight}</li>
-                                    ))}
-                                </ul>
-                            </motion.div>
+                            <Premium3DCard key={industry.name} className="industry-card-wrapper">
+                                <motion.div
+                                    className="industry-card"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    <div className="industry-header">
+                                        <div className="industry-icon">{industry.icon}</div>
+                                        <h3>{industry.name}</h3>
+                                        <span className="avg-cpl">Avg CPL: {industry.avgCPL}</span>
+                                    </div>
+                                    <ul className="industry-insights">
+                                        {industry.insights.map((insight, i) => (
+                                            <li key={i}>{insight}</li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            </Premium3DCard>
                         ))}
                     </div>
                 </div>
@@ -156,20 +158,21 @@ const Insights = () => {
 
                     <div className="trends-grid">
                         {trends.map((trend, index) => (
-                            <motion.div
-                                key={trend.title}
-                                className="trend-card"
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                <FaChartLine className="trend-icon" />
-                                <div>
-                                    <h3>{trend.title}</h3>
-                                    <p>{trend.description}</p>
-                                </div>
-                            </motion.div>
+                            <Premium3DCard key={trend.title} className="trend-card-wrapper">
+                                <motion.div
+                                    className="trend-card"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    <FaChartLine className="trend-icon" />
+                                    <div>
+                                        <h3>{trend.title}</h3>
+                                        <p>{trend.description}</p>
+                                    </div>
+                                </motion.div>
+                            </Premium3DCard>
                         ))}
                     </div>
                 </div>

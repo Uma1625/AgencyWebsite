@@ -25,6 +25,7 @@ import {
 import { BiTargetLock } from 'react-icons/bi';
 import './Services.css';
 import CTASection from '../../components/CTASection/CTASection';
+import Premium3DCard from '../../components/Premium3DCard/Premium3DCard';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -187,32 +188,34 @@ const Services = () => {
 
                     <div className="services-grid-premium">
                         {services.map((service, index) => (
-                            <motion.div
+                            <Premium3DCard
                                 key={index}
-                                className="service-card-compact"
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
-                                whileHover={{ y: -10, scale: 1.02 }}
+                                className="service-card-wrapper"
                             >
-                                <div className="service-card-img">
-                                    <img src={service.image} alt={service.title} />
-                                    <div className="service-card-gradient" style={{ background: `linear-gradient(180deg, transparent 0%, ${service.color}dd 100%)` }} />
-                                </div>
-                                <div className="service-card-body">
-                                    <div className="service-icon-sm" style={{ background: service.color }}>
-                                        {service.icon}
+                                <motion.div
+                                    className="service-card-compact"
+                                    // Removed initial opacity to ensure visibility
+                                    whileHover={{ scale: 1.02 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="service-card-img">
+                                        <img src={service.image} alt={service.title} loading="lazy" /> {/* Added lazy load */}
+                                        <div className="service-card-gradient" style={{ background: `linear-gradient(180deg, transparent 0%, ${service.color}dd 100%)` }} />
                                     </div>
-                                    <h3>{service.title}</h3>
-                                    <p>{service.description}</p>
-                                    <ul className="service-features-list">
-                                        {service.features.map((feature, i) => (
-                                            <li key={i}><HiCheckCircle style={{ color: service.color }} />{feature}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </motion.div>
+                                    <div className="service-card-body">
+                                        <div className="service-icon-sm" style={{ background: service.color }}>
+                                            {service.icon}
+                                        </div>
+                                        <h3>{service.title}</h3>
+                                        <p>{service.description}</p>
+                                        <ul className="service-features-list">
+                                            {service.features.map((feature, i) => (
+                                                <li key={i}><HiCheckCircle style={{ color: service.color }} />{feature}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </motion.div>
+                            </Premium3DCard>
                         ))}
                     </div>
                 </div>

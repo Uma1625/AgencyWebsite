@@ -1,0 +1,554 @@
+/* Services Orbit - Ultra Premium 3D */
+.services-orbit-section {
+    position: relative;
+    padding: 100px 0 160px;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000;
+    /* Deep black base for neon pop */
+    perspective: 2000px;
+    /* Enable deep 3D space */
+}
+
+.section-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(20, 20, 40, 1) 0%, #000 100%);
+    z-index: 0;
+}
+
+.service-orbit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.orbit-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.subtitle-premium {
+    color: #F59E0B;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.title-premium {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient-gold {
+    background: linear-gradient(to right, #FCD34D, #D97706, #FCD34D);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shine 3s linear infinite;
+}
+
+@keyframes gradient-shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+/* =========================================
+   ORBIT SYSTEM
+   ========================================= */
+.orbit-system-wrapper {
+    position: relative;
+    width: 900px;
+    height: 900px;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg);
+    /* Tilt the whole system slightly for 3D look */
+}
+
+/* Energy Field Background */
+.energy-field {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(90deg);
+    /* Lay flat */
+    width: 800px;
+    height: 800px;
+    pointer-events: none;
+}
+
+.field-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.1);
+}
+
+.field-ring.ring-1 {
+    width: 100%;
+    height: 100%;
+    animation: pulse-ring 4s infinite;
+}
+
+.field-ring.ring-2 {
+    width: 70%;
+    height: 70%;
+    animation: pulse-ring 4s infinite 1s;
+}
+
+.field-ring.ring-3 {
+    width: 40%;
+    height: 40%;
+    animation: pulse-ring 4s infinite 2s;
+}
+
+@keyframes pulse-ring {
+
+    0%,
+    100% {
+        border-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 10px rgba(220, 38, 38, 0.0);
+    }
+
+    50% {
+        border-color: rgba(220, 38, 38, 0.2);
+        box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
+    }
+}
+
+/* =========================================
+   REACTOR CORE (CENTER)
+   ========================================= */
+.orbit-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Undo tilt for logo? No, keep it upright */
+    /* To keep logo upright inside a tilted X system, we need to counter-rotate it X */
+    transform: translate(-50%, -50%) rotateX(-20deg);
+    z-index: 50;
+    pointer-events: none;
+}
+
+.reactor-core {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.reactor-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.outer-ring {
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgba(20, 20, 30, 1);
+    border-top: 4px solid #EF4444;
+    border-bottom: 4px solid #F59E0B;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+    animation: spin-reactor 10s linear infinite;
+}
+
+.mid-ring {
+    width: 80%;
+    height: 80%;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    animation: spin-reactor 15s linear infinite reverse;
+}
+
+.inner-ring {
+    width: 60%;
+    height: 60%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: rotateX(70deg);
+    /* 3D ring */
+    animation: spin-3d-ring 6s linear infinite;
+}
+
+.core-energy-sphere {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle at 30% 30%, #ff0000, #300000);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 60px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(255, 100, 100, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.plasma-swirl {
+    position: absolute;
+    inset: -20px;
+    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: spin-reactor 3s linear infinite;
+    mix-blend-mode: overlay;
+    border-radius: 40%;
+}
+
+.plasma-swirl.reverse {
+    animation-direction: reverse;
+    animation-duration: 4s;
+    background: conic-gradient(from 180deg, transparent, rgba(255, 200, 0, 0.5), transparent);
+}
+
+.core-letter-3d {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    z-index: 10;
+    text-shadow: 0 0 20px white;
+}
+
+.lens-flare {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%) rotate(45deg);
+    filter: blur(2px);
+    opacity: 0.5;
+    animation: flare-rotate 10s infinite linear;
+}
+
+@keyframes spin-reactor {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-3d-ring {
+    0% {
+        transform: rotateX(70deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(70deg) rotateZ(360deg);
+    }
+}
+
+@keyframes flare-rotate {
+    to {
+        transform: translate(-50%, -50%) rotate(405deg);
+    }
+}
+
+
+/* =========================================
+   ORBIT ITEMS
+   ========================================= */
+:root {
+    --orbit-radius: 360px;
+}
+
+.orbit-items-container {
+    position: absolute;
+    inset: 0;
+    transform: rotateX(-20deg);
+    /* Counter-tilt the items container so they orbit on a flat plane relative to the tilted system? */
+    /* No, we want them to orbit on the tilted plane. */
+    /* wait, if system is tilted X 20deg, and we lay items flat, they describe a 3D circle. */
+    transform-style: preserve-3d;
+}
+
+.orbit-track-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--orbit-radius) * 2);
+    height: calc(var(--orbit-radius) * 2);
+    transform: translate(-50%, -50%) rotateX(0deg);
+    /* Matches system tilt */
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    /* Logic:
+       Rotate Y (Angle) to position on circle
+       Translate Z (Radius) to push out
+       Rotate Y (-Angle) to face forward
+    */
+    /* Using 2D rotation for reliability, but projecting in 3D */
+    animation: orbit-fly 60s linear infinite;
+    transform-style: preserve-3d;
+}
+
+/* Hover Pause */
+.orbit-system-wrapper:hover .orbit-item {
+    animation-play-state: paused;
+}
+
+@keyframes orbit-fly {
+    from {
+        transform: rotate(var(--start-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--start-angle)));
+    }
+
+    to {
+        transform: rotate(calc(var(--start-angle) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--start-angle) + 360deg)));
+    }
+}
+
+/* HOLOGRAPHIC CARD */
+.holo-card {
+    /* We need to counter-rotate X(20deg) to keep card upright vertically if the system is tilted. */
+    transform: translate(-50%, -50%) rotateX(-20deg);
+    width: 220px;
+    height: 160px;
+    cursor: pointer;
+    perspective: 800px;
+}
+
+/* Hover Scale */
+.holo-card:hover .holo-card-inner {
+    transform: scale(1.1) translateZ(20px);
+    background: rgba(10, 20, 40, 0.85);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.holo-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    /* Sci-fi corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.holo-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.holo-card:hover .holo-card-bg {
+    opacity: 0.5;
+}
+
+/* Scan Line */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    opacity: 0.5;
+    animation: scan-vertical 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes scan-vertical {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+.holo-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.holo-title {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.holo-status {
+    font-size: 0.7rem;
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10B981;
+    animation: blink-dot 2s infinite;
+}
+
+@keyframes blink-dot {
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* Glow bottom */
+.holo-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    box-shadow: 0 -5px 20px currentColor;
+    opacity: 0.7;
+}
+
+/* Tether Line */
+.tether-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--orbit-radius);
+    height: 1px;
+    background: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
+    transform-origin: left;
+    display: none;
+    /* Often too cluttery, but can be enabled */
+}
+
+
+/* =========================================
+   CTA BUTTON 3D
+   ========================================= */
+.btn-premium-3d {
+    position: relative;
+    background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
+    padding: 16px 40px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.btn-premium-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+}
+
+.btn-premium-3d:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.4);
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    animation: shine-sweep 4s infinite;
+}
+
+@keyframes shine-sweep {
+    0% {
+        left: -100%;
+        top: -100%;
+    }
+
+    20% {
+        left: 100%;
+        top: 100%;
+    }
+
+    100% {
+        left: 100%;
+        top: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+    .orbit-system-wrapper {
+        display: none;
+    }
+}

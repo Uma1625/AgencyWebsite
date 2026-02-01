@@ -9,10 +9,10 @@ const Globe3DBackground = ({
     // Color palettes for different themes
     const colorPalettes = {
         red: {
-            primary: 'rgba(220, 38, 38, 0.5)',
-            secondary: 'rgba(239, 68, 68, 0.3)',
-            glow: 'rgba(220, 38, 38, 0.4)',
-            particle: 'rgba(248, 113, 113, 0.6)'
+            primary: 'rgba(220, 38, 38, 0.25)',
+            secondary: 'rgba(239, 68, 68, 0.15)',
+            glow: 'rgba(220, 38, 38, 0.2)',
+            particle: 'rgba(248, 113, 113, 0.3)'
         },
         orange: {
             primary: 'rgba(249, 115, 22, 0.5)',

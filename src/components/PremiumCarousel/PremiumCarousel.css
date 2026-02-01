@@ -1,0 +1,117 @@
+.premium-marquee-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.marquee-track-scrollable {
+    width: 100%;
+    overflow-x: hidden;
+    /* Hide scrollbar but allow JS scroll */
+    white-space: nowrap;
+    /* Smooth scrolling for manual buttons */
+    scroll-behavior: smooth;
+}
+
+.marquee-track-inner {
+    display: inline-flex;
+    gap: 40px;
+    padding: 20px 0;
+    /* Space for hover */
+}
+
+.marquee-item {
+    flex: 0 0 auto;
+    width: 350px;
+    display: inline-block;
+}
+
+.marquee-card-inner {
+    height: 100%;
+    width: 100%;
+}
+
+.marquee-card-inner .case-study-card-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+/* Controls Overlay */
+.marquee-controls-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Let clicks pass through to cards */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 30;
+    max-width: 1300px;
+    /* Limit width */
+    margin: 0 auto;
+}
+
+.control-btn {
+    pointer-events: auto;
+    /* Re-enable clicks for buttons */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(30, 30, 40, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:hover {
+    background: var(--primary);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.6);
+}
+
+/* Masks */
+.marquee-mask-left,
+.marquee-mask-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.marquee-mask-left {
+    left: 0;
+    background: linear-gradient(to right, #020617, transparent);
+}
+
+.marquee-mask-right {
+    right: 0;
+    background: linear-gradient(to left, #020617, transparent);
+}
+
+@media (max-width: 768px) {
+    .marquee-item {
+        width: 300px;
+    }
+
+    .control-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+    }
+
+    .marquee-controls-overlay {
+        padding: 0 10px;
+    }
+}

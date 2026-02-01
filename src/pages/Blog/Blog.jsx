@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaUserEdit, FaArrowRight } from 'react-icons/fa';
 import './Blog.css';
+import Premium3DCard from '../../components/Premium3DCard/Premium3DCard';
 
 const Blog = () => {
     // Placeholder blog posts
@@ -109,34 +110,35 @@ const Blog = () => {
                 <div className="container">
                     <div className="blog-grid">
                         {blogPosts.map((post, index) => (
-                            <motion.article
-                                key={post.id}
-                                className="blog-card"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                            >
-                                <div className="blog-card-image">
-                                    <img src={post.image} alt={post.title} />
-                                    <span className="blog-category">{post.category}</span>
-                                </div>
-                                <div className="blog-card-content">
-                                    <h2>{post.title}</h2>
-                                    <p>{post.excerpt}</p>
-                                    <div className="blog-card-meta">
-                                        <span className="meta-item">
-                                            <FaUserEdit /> {post.author}
-                                        </span>
-                                        <span className="meta-item">
-                                            <FaCalendarAlt /> {post.date}
-                                        </span>
+                            <Premium3DCard key={post.id} className="blog-card-wrapper">
+                                <motion.article
+                                    className="blog-card"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                >
+                                    <div className="blog-card-image">
+                                        <img src={post.image} alt={post.title} />
+                                        <span className="blog-category">{post.category}</span>
                                     </div>
-                                    <button className="read-more-btn" disabled>
-                                        Coming Soon <FaArrowRight />
-                                    </button>
-                                </div>
-                            </motion.article>
+                                    <div className="blog-card-content">
+                                        <h2>{post.title}</h2>
+                                        <p>{post.excerpt}</p>
+                                        <div className="blog-card-meta">
+                                            <span className="meta-item">
+                                                <FaUserEdit /> {post.author}
+                                            </span>
+                                            <span className="meta-item">
+                                                <FaCalendarAlt /> {post.date}
+                                            </span>
+                                        </div>
+                                        <button className="read-more-btn" disabled>
+                                            Coming Soon <FaArrowRight />
+                                        </button>
+                                    </div>
+                                </motion.article>
+                            </Premium3DCard>
                         ))}
                     </div>
 

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
@@ -6,20 +7,21 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner'; // We'll create this or use a simple fallback
 
-// Pages
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Services from './pages/Services/Services';
-import Industries from './pages/Industries/Industries';
-import Results from './pages/Results/Results';
-import Contact from './pages/Contact/Contact';
-import Privacy from './pages/Privacy/Privacy';
-import Terms from './pages/Terms/Terms';
-import Disclaimer from './pages/Disclaimer/Disclaimer';
-import Refund from './pages/Refund/Refund';
-import Blog from './pages/Blog/Blog';
-import Insights from './pages/Insights/Insights';
+// Lazy Loaded Pages for Performance
+const Home = lazy(() => import('./pages/Home/Home'));
+const About = lazy(() => import('./pages/About/About'));
+const Services = lazy(() => import('./pages/Services/Services'));
+const Industries = lazy(() => import('./pages/Industries/Industries'));
+const Results = lazy(() => import('./pages/Results/Results'));
+const Contact = lazy(() => import('./pages/Contact/Contact'));
+const Privacy = lazy(() => import('./pages/Privacy/Privacy'));
+const Terms = lazy(() => import('./pages/Terms/Terms'));
+const Disclaimer = lazy(() => import('./pages/Disclaimer/Disclaimer'));
+const Refund = lazy(() => import('./pages/Refund/Refund'));
+const Blog = lazy(() => import('./pages/Blog/Blog'));
+const Insights = lazy(() => import('./pages/Insights/Insights'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -52,20 +54,22 @@ const AnimatedRoutes = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-        <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
-        <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
-        <Route path="/industries" element={<PageWrapper><Industries /></PageWrapper>} />
-        <Route path="/results" element={<PageWrapper><Results /></PageWrapper>} />
-        <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
-        <Route path="/privacy" element={<PageWrapper><Privacy /></PageWrapper>} />
-        <Route path="/terms" element={<PageWrapper><Terms /></PageWrapper>} />
-        <Route path="/disclaimer" element={<PageWrapper><Disclaimer /></PageWrapper>} />
-        <Route path="/refund" element={<PageWrapper><Refund /></PageWrapper>} />
-        <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
-        <Route path="/insights" element={<PageWrapper><Insights /></PageWrapper>} />
-      </Routes>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+          <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+          <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
+          <Route path="/industries" element={<PageWrapper><Industries /></PageWrapper>} />
+          <Route path="/results" element={<PageWrapper><Results /></PageWrapper>} />
+          <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+          <Route path="/privacy" element={<PageWrapper><Privacy /></PageWrapper>} />
+          <Route path="/terms" element={<PageWrapper><Terms /></PageWrapper>} />
+          <Route path="/disclaimer" element={<PageWrapper><Disclaimer /></PageWrapper>} />
+          <Route path="/refund" element={<PageWrapper><Refund /></PageWrapper>} />
+          <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
+          <Route path="/insights" element={<PageWrapper><Insights /></PageWrapper>} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 };

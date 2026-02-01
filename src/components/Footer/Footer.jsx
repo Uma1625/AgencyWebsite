@@ -33,20 +33,7 @@ const Footer = () => {
         { path: '/refund', label: 'Refund Policy' },
     ];
 
-    const services = [
-        { path: '/services', label: 'Google Ads' },
-        { path: '/services', label: 'Meta Ads' },
-        { path: '/services', label: 'SEO' },
-        { path: '/services', label: 'Lead Generation' },
-        { path: '/services', label: 'Website Design' },
-    ];
 
-    const industries = [
-        { path: '/industries', label: 'Clinics & Hospitals' },
-        { path: '/industries', label: 'Real Estate' },
-        { path: '/industries', label: 'Education' },
-        { path: '/industries', label: 'Local Business' },
-    ];
 
     const socials = [
         { icon: <FaFacebookF />, url: '#', label: 'Facebook' },
@@ -65,46 +52,14 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-            {/* Animated Background */}
-            <div className="footer-bg">
-                <div className="footer-particles">
-                    {[...Array(20)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="particle"
-                            animate={{
-                                y: [-20, -100],
-                                x: [0, Math.random() * 50 - 25],
-                                opacity: [0, 1, 0],
-                                scale: [0, 1, 0.5]
-                            }}
-                            transition={{
-                                duration: 4 + Math.random() * 3,
-                                repeat: Infinity,
-                                delay: Math.random() * 5,
-                                ease: "easeOut"
-                            }}
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                bottom: '0%'
-                            }}
-                        />
-                    ))}
-                </div>
-                <div className="footer-glow" />
+            <div className="waves">
+                <div className="wave" id="wave1"></div>
+                <div className="wave" id="wave2"></div>
+                <div className="wave" id="wave3"></div>
+                <div className="wave" id="wave4"></div>
             </div>
 
-            {/* Scroll to Top Button */}
-            <motion.button
-                className="scroll-to-top"
-                onClick={scrollToTop}
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.9 }}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-            >
-                <FaArrowUp />
-            </motion.button>
+
 
             {/* Main Footer */}
             <div className="footer-main">
@@ -194,56 +149,6 @@ const Footer = () => {
                                         <Link to={link.path} className="footer-link">
                                             <span className="link-dot" />
                                             {link.label}
-                                        </Link>
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        {/* Services */}
-                        <motion.div
-                            className="footer-column"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                        >
-                            <h4 className="footer-title">Our Services</h4>
-                            <ul className="footer-links">
-                                {services.map((service, index) => (
-                                    <motion.li
-                                        key={index}
-                                        whileHover={{ x: 10 }}
-                                        transition={{ type: "spring", stiffness: 300 }}
-                                    >
-                                        <Link to={service.path} className="footer-link">
-                                            <span className="link-dot" />
-                                            {service.label}
-                                        </Link>
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        {/* Industries */}
-                        <motion.div
-                            className="footer-column"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.25 }}
-                        >
-                            <h4 className="footer-title">Industries</h4>
-                            <ul className="footer-links">
-                                {industries.map((industry, index) => (
-                                    <motion.li
-                                        key={index}
-                                        whileHover={{ x: 10 }}
-                                        transition={{ type: "spring", stiffness: 300 }}
-                                    >
-                                        <Link to={industry.path} className="footer-link">
-                                            <span className="link-dot" />
-                                            {industry.label}
                                         </Link>
                                     </motion.li>
                                 ))}

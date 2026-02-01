@@ -1,4 +1,4 @@
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
@@ -11,14 +11,25 @@ const WhatsAppButton = () => {
     };
 
     return (
-        <button
-            className="whatsapp-float-btn"
-            onClick={handleClick}
-            aria-label="Chat on WhatsApp"
-        >
-            <FaWhatsapp className="whatsapp-icon" />
-            <span className="whatsapp-tooltip">Chat with us</span>
-        </button>
+        <div className="floating-actions">
+            <a
+                href={`tel:+${phoneNumber}`}
+                className="float-btn call-btn"
+                aria-label="Call Now"
+            >
+                <FaPhoneAlt className="action-icon" />
+                <span className="action-tooltip">Call Now</span>
+            </a>
+
+            <button
+                className="float-btn whatsapp-btn"
+                onClick={handleClick}
+                aria-label="Chat on WhatsApp"
+            >
+                <FaWhatsapp className="action-icon" />
+                <span className="action-tooltip">Chat on WhatsApp</span>
+            </button>
+        </div>
     );
 };
 

@@ -41,6 +41,9 @@ import CTASection from '../../components/CTASection/CTASection';
 import ProcessFlow from '../../components/ProcessFlow/ProcessFlow';
 import FAQSection from '../../components/FAQSection/FAQSection';
 import ToolsStack from '../../components/ToolsStack/ToolsStack';
+import ServicesOrbit from '../../components/ServicesOrbit/ServicesOrbit';
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,6 +104,10 @@ const Home = () => {
         return () => clearInterval(timer);
     }, []);
 
+
+
+    // ... (existing imports)
+
     const services = [
         { icon: <FaGoogle />, title: 'Google Ads', description: 'Search, Display & YouTube campaigns that drive qualified leads.', color: '#4285F4', image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=400' },
         { icon: <FaFacebookF />, title: 'Meta Ads', description: 'Facebook & Instagram ads for targeted audience reach.', color: '#1877F2', image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400' },
@@ -124,7 +131,7 @@ const Home = () => {
     const industries = [
         { icon: <FaHospital />, name: 'Clinics & Hospitals', image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400' },
         { icon: <FaBuilding />, name: 'Real Estate', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400' },
-        { icon: <FaGraduationCap />, name: 'Education & Coaching', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400' },
+        { icon: <FaGraduationCap />, name: 'Education & Coaching', image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400' },
         { icon: <FaStore />, name: 'Local Businesses', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400' },
         { icon: <FaUserMd />, name: 'Healthcare Professionals', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400' },
         { icon: <FaBriefcase />, name: 'Service-Based', image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400' },
@@ -184,7 +191,7 @@ const Home = () => {
         {
             title: 'SEO for Education: Rank Higher, Attract More Students',
             description: 'Everything you need to know about search engine optimization for schools and coaching institutes.',
-            image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600',
+            image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600',
             date: 'Jan 15, 2026',
             category: 'SEO'
         }
@@ -331,72 +338,8 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* Services Section - Compact Cards with Left/Right/Bottom Animation */}
-            <section className="services-section section" ref={servicesRef}>
-                <div className="section-bg">
-                    <div className="bg-grid" />
-                </div>
-                <div className="container">
-                    <motion.div
-                        className="section-header"
-                        initial="hidden"
-                        animate={servicesInView ? "visible" : "hidden"}
-                        variants={containerVariants}
-                    >
-                        <motion.span className="subtitle" variants={itemVariants}>
-                            <HiSparkles /> Our Services
-                        </motion.span>
-                        <motion.h2 variants={itemVariants}>
-                            One Stop <span className="gradient-text">Digital Growth Solution</span>
-                        </motion.h2>
-                        <motion.p variants={itemVariants}>
-                            Everything you need to dominate your market online
-                        </motion.p>
-                    </motion.div>
-
-                    <div className="services-grid-compact">
-                        {services.map((service, index) => {
-                            const animation = getCardAnimation(index);
-                            return (
-                                <motion.div
-                                    key={index}
-                                    className="service-card-small"
-                                    initial={animation.initial}
-                                    whileInView={animation.animate}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: index * 0.08 }}
-                                    whileHover={{ y: -12, scale: 1.03 }}
-                                >
-                                    <div className="service-card-image">
-                                        <img src={service.image} alt={service.title} />
-                                        <div className="service-gradient" style={{ background: `linear-gradient(180deg, transparent 30%, ${service.color}ee 100%)` }} />
-                                    </div>
-                                    <div className="service-card-info">
-                                        <div className="service-icon-mini" style={{ background: service.color }}>
-                                            {service.icon}
-                                        </div>
-                                        <h3>{service.title}</h3>
-                                        <p>{service.description}</p>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-
-                    <motion.div
-                        className="services-cta-btn"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <Link to="/services">
-                            <motion.button className="btn btn-secondary" whileHover={{ scale: 1.05 }}>
-                                View All Services <HiArrowRight />
-                            </motion.button>
-                        </Link>
-                    </motion.div>
-                </div>
-            </section>
+            {/* Services Section - Replaced with Orbit Design */}
+            <ServicesOrbit services={services} />
 
             {/* Testimonials Carousel with Title */}
             <section className="testimonials-carousel-section section" ref={testimonialsRef}>
@@ -405,16 +348,11 @@ const Home = () => {
                     <div className="testimonials-overlay" />
                 </div>
                 <div className="container">
-                    <motion.div
-                        className="section-header"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div className="section-header" style={{ position: 'relative', zIndex: 2 }}>
                         <span className="subtitle"><FaQuoteLeft /> Success Stories</span>
                         <h2>What Our Clients Say About <span className="gold-text">Abhivrudhi</span></h2>
                         <p>Real feedback from businesses we've helped grow</p>
-                    </motion.div>
+                    </div>
 
                     <div className="testimonials-slider">
                         <button className="slider-arrow prev" onClick={prevSlide}>

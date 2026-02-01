@@ -295,107 +295,142 @@
     color: var(--text-muted);
 }
 
-.industries-list {
-    background: var(--bg-dark);
-}
-
-.industry-block {
+/* Bento Grid */
+.bento-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    margin-bottom: 120px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.industry-block:last-child {
-    margin-bottom: 0;
+.bento-item-wrapper.span-2 {
+    grid-column: span 2;
 }
 
-.industry-block.reverse {
-    direction: rtl;
+.bento-item-wrapper.span-1 {
+    grid-column: span 1;
 }
 
-.industry-block.reverse>* {
-    direction: ltr;
-}
-
-.industry-image {
+.bento-card {
     position: relative;
-    border-radius: var(--radius-xl);
+    height: 100%;
+    min-height: 320px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    aspect-ratio: 4/3;
-    box-shadow: var(--shadow-xl);
+    background: var(--glass-bg);
 }
 
-.industry-image img {
+.bento-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.bento-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-.image-overlay {
+.bento-overlay {
     position: absolute;
     inset: 0;
-    opacity: 0.3;
+    opacity: 0.85;
+    mix-blend-mode: multiply;
 }
 
-.industry-badge {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 80px;
-    height: 80px;
-    border-radius: var(--radius-lg);
+.bento-card:hover .bento-image img {
+    transform: scale(1.1);
+}
+
+.bento-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+}
+
+.bento-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: var(--text-white);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.industry-subtitle {
-    display: inline-block;
-    padding: 8px 20px;
-    background: rgba(220, 38, 38, 0.45);
-    border: 1px solid var(--border-glow);
-    border-radius: var(--radius-full);
-    color: var(--primary-light);
-    font-weight: 600;
-    font-size: 0.9rem;
+.bento-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.bento-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 20px;
 }
 
-.industry-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--text-white);
+.bento-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
-.industry-content>p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 32px;
-}
-
-.industry-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 36px;
-}
-
-.industry-features li {
+.bento-features li {
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-weight: 500;
-    color: var(--text-light);
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
 }
 
-.check-icon {
-    font-size: 1.3rem;
-    color: var(--accent-emerald);
+.bento-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: auto;
+    width: fit-content;
+}
+
+.bento-link:hover {
+    gap: 12px;
+}
+
+/* Response */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bento-item-wrapper.span-2 {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-item-wrapper.span-2 {
+        grid-column: span 1;
+    }
 }
 
 /* Unified CTA Section */
