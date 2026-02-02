@@ -5,104 +5,267 @@
     min-height: 100vh;
 }
 
-/* Background - Additional effects on top of global background */
-.insights-bg {
+/* ============================================
+   3D DATA GLOBE BACKGROUND
+   ============================================ */
+.insights-globe-bg {
     position: fixed;
     inset: 0;
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
+    background: #020617;
+    /* Deep dark background */
 }
 
-.insights-gradient {
-    display: none;
-    /* Using global animated background instead */
-}
-
-.insights-glow {
+.insights-bg-gradient {
     position: absolute;
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
-    filter: blur(120px);
-    animation: insight-glow-float 18s ease-in-out infinite;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, #1a1a2e 0%, #020617 70%);
+    opacity: 0.8;
 }
 
-@keyframes insight-glow-float {
+/* Central Data Globe */
+.insights-data-globe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) perspective(1000px) rotateX(60deg);
+    width: 1200px;
+    height: 1200px;
+    opacity: 0.4;
+}
+
+.data-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px dashed rgba(220, 38, 38, 0.3);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.1);
+}
+
+.data-ring.ring-1 {
+    width: 600px;
+    height: 600px;
+    animation: rotate-ring 30s linear infinite;
+}
+
+.data-ring.ring-2 {
+    width: 900px;
+    height: 900px;
+    border-color: rgba(249, 115, 22, 0.2);
+    animation: rotate-ring-reverse 45s linear infinite;
+}
+
+.data-ring.ring-3 {
+    width: 1200px;
+    height: 1200px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(220, 38, 38, 0.1);
+    animation: rotate-ring 60s linear infinite;
+}
+
+.data-core-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.8) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: pulse-core 4s ease-in-out infinite;
+}
+
+@keyframes rotate-ring {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate-ring-reverse {
+    from {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes pulse-core {
 
     0%,
     100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.8;
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
     }
 
     50% {
-        transform: translateY(-40px) scale(1.1);
-        opacity: 1;
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.2);
     }
 }
 
-.insights-glow {
+/* Floating Particles */
+.insights-particles {
     position: absolute;
-    width: 700px;
-    height: 700px;
+    inset: 0;
+}
+
+.i-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
     border-radius: 50%;
-    filter: blur(120px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: float-particle 20s infinite linear;
 }
 
-.insights-glow.glow-1 {
-    top: 10%;
-    right: -15%;
-    background: rgba(220, 38, 38, 0.50);
+@keyframes float-particle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0;
+    }
 }
 
-.insights-glow.glow-2 {
-    bottom: 10%;
-    left: -15%;
-    background: rgba(249, 115, 22, 0.12);
-}
-
-.insights-grid-pattern {
+/* Grid Overlay */
+.insights-grid-overlay {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.5;
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    pointer-events: none;
 }
 
-/* Hero */
+/* ============================================
+   HERO SECTION (Video Background)
+   ============================================ */
 .insights-hero {
     position: relative;
-    z-index: 1;
-    padding: 160px 0 80px;
-    text-align: center;
+    min-height: 80vh;
+    /* Taller hero for impact */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    overflow: hidden;
 }
 
-.insights-hero-content .section-label {
-    display: inline-block;
+/* Video Container */
+.hero-video-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    /* Slightly dimmed for text readability */
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(2, 6, 23, 0.3), rgba(2, 6, 23, 1));
+    z-index: 1;
+}
+
+/* Bokeh Effects */
+.hero-bokeh {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bokeh-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.bokeh-1 {
+    top: 20%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(220, 38, 38, 0.2);
+}
+
+.bokeh-2 {
+    bottom: 20%;
+    right: 20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Hero Content */
+.insights-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 8px 20px;
-    background: rgba(220, 38, 38, 0.45);
-    border: 1px solid rgba(220, 38, 38, 0.65);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     font-size: 0.9rem;
-    color: var(--primary);
-    margin-bottom: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
 }
 
 .insights-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 800;
-    color: var(--text-white);
-    margin-bottom: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .insights-hero p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Industry Section */
@@ -154,7 +317,6 @@
     border: none;
     border-radius: var(--radius-lg);
     padding: 30px;
-    transition: all 0.4s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -165,9 +327,9 @@
 }
 
 .industry-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.45);
+    /* Hover effects handled by Premium3DCard */
+    transform: none;
+    box-shadow: none;
 }
 
 .industry-header {
@@ -205,8 +367,23 @@
     font-weight: 600;
 }
 
+.trend-graph-container {
+    height: 60px;
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.trend-graph-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.3));
+}
+
 .industry-insights {
     list-style: none;
+    margin-top: auto;
+    /* Push to bottom */
 }
 
 .industry-insights li {
@@ -235,8 +412,10 @@
 
 .trends-grid {
     display: grid;
-    gap: 24px;
-    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Column Layout */
+    gap: 30px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -244,28 +423,65 @@
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background: var(--glass-bg);
-    border: 1px solid var(--border-dark);
-    border-radius: var(--radius-md);
+    background: transparent;
+    border: none;
     padding: 30px;
     transition: all 0.3s ease;
+    height: 100%;
 }
 
 .trend-card:hover {
-    border-color: rgba(220, 38, 38, 0.65);
-    background: var(--bg-card-hover);
+    background: transparent;
+    border-color: transparent;
+}
+
+.trend-icon-wrapper {
+    position: relative;
+    flex-shrink: 0;
 }
 
 .trend-icon {
     font-size: 2rem;
     color: var(--primary);
-    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.icon-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.3);
+    filter: blur(8px);
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
 }
 
 .trend-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-white);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .trend-card p {
@@ -327,6 +543,18 @@
     .industry-grid {
         grid-template-columns: 1fr;
         padding: 0 16px;
+    }
+
+    .trends-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights-data-globe {
+        width: 800px;
+        /* Smaller base size */
+        height: 800px;
+        transform: translate(-50%, -50%) perspective(1000px) rotateX(60deg) scale(0.6);
+        opacity: 0.3;
     }
 
     .trend-card {

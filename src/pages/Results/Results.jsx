@@ -20,9 +20,11 @@ const Results = () => {
                 cpl: '₹130',
                 duration: '3 Months'
             },
-            description: 'Generated high-quality patient leads with location-specific targeting.',
-            features: ['Google Ads Campaign', 'Local SEO', 'Social Media Management'],
-            gradient: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)'
+            problem: 'High patient acquisition cost (₹500+) and low show-up rates from existing campaigns.',
+            solution: 'Implemented location-based Google Ads with "Near Me" targeting and automated appointment reminders.',
+            impact: 'Reduced CPL by 74% and improved patient show-up rate by 40%.',
+            features: ['Google Ads', 'Local SEO', 'Automated Reminders'],
+            gradient: 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)'
         },
         {
             title: 'Premium Real Estate Developer',
@@ -32,9 +34,11 @@ const Results = () => {
                 cpl: '₹450',
                 duration: '2 Months'
             },
-            description: 'Qualified property buyer leads for premium residential project.',
-            features: ['Meta Ads', 'Lead Funnels', 'Video Marketing'],
-            gradient: 'linear-gradient(135deg, #06B6D4 0%, #0EA5E9 100%)'
+            problem: 'Generated many leads but few were qualified for luxury price points.',
+            solution: 'Shifted to high-intent Meta Lead Forms with custom qualification questions and video tours.',
+            impact: 'Generated 250+ HNI leads with a 15% site visit conversion rate.',
+            features: ['Meta Ads', 'Video Marketing', 'Lead Qualification'],
+            gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
         },
         {
             title: 'Engineering College',
@@ -44,9 +48,11 @@ const Results = () => {
                 cpl: '₹85',
                 duration: 'Admission Season'
             },
-            description: 'Admission inquiries from target states with high conversion rate.',
-            features: ['Performance Marketing', 'Campus Videos', 'SEO'],
-            gradient: 'linear-gradient(135deg, #F59E0B 0%, #F97316 100%)'
+            problem: 'Struggling to fill seats due to intense competition and generic marketing.',
+            solution: 'Launched "Campus Life" video series and geo-targeted ads in feeder cities.',
+            impact: 'Achieved full occupancy for the academic year with 1200+ qualified inquiries.',
+            features: ['Video Campaigns', 'Geo-Targeting', 'SEO'],
+            gradient: 'linear-gradient(135deg, #9333ea 0%, #7c3aed 100%)'
         },
         {
             title: 'Dental Clinic Chain',
@@ -56,9 +62,11 @@ const Results = () => {
                 cpl: '₹95',
                 duration: '4 Months'
             },
-            description: 'Multiple location leads with appointment booking integration.',
-            features: ['Google Ads', 'Reputation Management', 'WhatsApp Marketing'],
-            gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)'
+            problem: 'New branches had low visibility and empty appointment slots.',
+            solution: 'Deployed Hyper-Local SEO and "Emergency Dentist" Google Search campaigns.',
+            impact: 'New branches reached break-even patient volume within 2 months.',
+            features: ['Local SEO', 'Search Ads', 'WhatsApp Booking'],
+            gradient: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)'
         }
     ];
 
@@ -191,31 +199,42 @@ const Results = () => {
                             items={caseStudies}
                             renderItem={(study, index) => (
                                 <Premium3DCard key={index} className="case-study-card-wrapper" glowColor={study.gradient}>
-                                    <div className="case-study-card card">
+                                    <div className="case-study-card">
                                         <div className="case-study-header" style={{ background: study.gradient }}>
                                             <span className="industry-tag">{study.industry}</span>
                                             <h3>{study.title}</h3>
                                         </div>
-                                        <div className="case-study-metrics">
-                                            <div className="metric">
-                                                <span className="metric-value">{study.metrics.leads}</span>
-                                                <span className="metric-label">Leads</span>
+
+                                        <div className="case-study-content">
+                                            <div className="case-section problem">
+                                                <h4><span className="icon">⚠️</span> Problem Statement</h4>
+                                                <p>{study.problem}</p>
                                             </div>
-                                            <div className="metric">
-                                                <span className="metric-value">{study.metrics.cpl}</span>
-                                                <span className="metric-label">Cost/Lead</span>
+
+                                            <div className="case-section solution">
+                                                <h4><span className="icon">💡</span> What We Did</h4>
+                                                <p>{study.solution}</p>
                                             </div>
-                                            <div className="metric">
-                                                <span className="metric-value">{study.metrics.duration}</span>
-                                                <span className="metric-label">Duration</span>
+
+                                            <div className="case-section result">
+                                                <h4><span className="icon">🚀</span> The Outcome</h4>
+                                                <div className="case-study-metrics">
+                                                    <div className="metric">
+                                                        <span className="metric-value">{study.metrics.leads}</span>
+                                                        <span className="metric-label">Leads</span>
+                                                    </div>
+                                                    <div className="metric">
+                                                        <span className="metric-value">{study.metrics.cpl}</span>
+                                                        <span className="metric-label">CPL</span>
+                                                    </div>
+                                                    <div className="metric">
+                                                        <span className="metric-value">{study.metrics.duration}</span>
+                                                        <span className="metric-label">Duration</span>
+                                                    </div>
+                                                </div>
+                                                <p className="impact-text">{study.impact}</p>
                                             </div>
                                         </div>
-                                        <p className="case-study-description">{study.description}</p>
-                                        <ul className="case-study-features">
-                                            {study.features.map((feature, i) => (
-                                                <li key={i}><HiCheckCircle /> {feature}</li>
-                                            ))}
-                                        </ul>
                                     </div>
                                 </Premium3DCard>
                             )}

@@ -2,30 +2,36 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 80px 0;
     overflow: hidden;
 }
 
 .marquee-track-scrollable {
     width: 100%;
     overflow-x: hidden;
-    /* Hide scrollbar but allow JS scroll */
     white-space: nowrap;
-    /* Smooth scrolling for manual buttons */
     scroll-behavior: smooth;
+    padding-bottom: 20px;
+    /* Space for shadows */
 }
 
 .marquee-track-inner {
     display: inline-flex;
     gap: 40px;
-    padding: 20px 0;
-    /* Space for hover */
+    padding: 0 40px;
 }
 
 .marquee-item {
     flex: 0 0 auto;
-    width: 350px;
+    width: 520px;
+    /* Wider cards to prevent content cutoff */
     display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.marquee-item:hover {
+    transform: translateY(-8px);
+    z-index: 10;
 }
 
 .marquee-card-inner {
@@ -43,40 +49,38 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    /* Let clicks pass through to cards */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 40px;
     z-index: 30;
-    max-width: 1300px;
-    /* Limit width */
+    max-width: 1600px;
     margin: 0 auto;
 }
 
 .control-btn {
     pointer-events: auto;
-    /* Re-enable clicks for buttons */
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: rgba(30, 30, 40, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 15, 25, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .control-btn:hover {
-    background: var(--primary);
+    background: white;
+    color: black;
     transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(220, 38, 38, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 /* Masks */
@@ -85,7 +89,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100px;
+    width: 150px;
     z-index: 20;
     pointer-events: none;
 }
@@ -101,17 +105,57 @@
 }
 
 @media (max-width: 768px) {
+    .premium-marquee-container {
+        padding: 40px 0;
+    }
+
+    .marquee-track-inner {
+        gap: 24px;
+        padding: 0 20px;
+    }
+
     .marquee-item {
-        width: 300px;
+        width: 340px;
     }
 
     .control-btn {
         width: 48px;
         height: 48px;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .marquee-controls-overlay {
         padding: 0 10px;
+    }
+
+    .marquee-mask-left,
+    .marquee-mask-right {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .premium-marquee-container {
+        padding: 30px 0;
+    }
+
+    .marquee-track-inner {
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .marquee-item {
+        width: 290px;
+    }
+
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .marquee-mask-left,
+    .marquee-mask-right {
+        width: 40px;
     }
 }

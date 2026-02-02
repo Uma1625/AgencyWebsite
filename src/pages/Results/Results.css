@@ -335,36 +335,80 @@
 .case-study-card {
     overflow: hidden;
     padding: 0;
+    background: transparent;
 }
 
 .case-study-header {
-    padding: 32px;
+    padding: 28px 32px 22px;
     color: white;
+    position: relative;
 }
 
 .industry-tag {
     display: inline-block;
-    padding: 6px 16px;
-    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
 }
 
 .case-study-header h3 {
     font-size: 1.5rem;
     color: white;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* Case study content area */
+.case-study-content {
+    padding: 24px 32px 32px;
+    white-space: normal;
+}
+
+.case-section {
+    margin-bottom: 20px;
+}
+
+.case-section:last-child {
+    margin-bottom: 0;
+}
+
+.case-section h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.case-section .icon {
+    font-size: 1.1rem;
+}
+
+.case-section p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin: 0;
 }
 
 .case-study-metrics {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    padding: 24px 32px;
-    background: rgba(30, 30, 40, 0.4);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-dark);
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .metric {
@@ -373,15 +417,30 @@
 
 .metric-value {
     display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-light);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
     margin-bottom: 4px;
+    letter-spacing: -0.5px;
 }
 
 .metric-label {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.impact-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-top: 12px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(244, 114, 182, 0.12) 0%, rgba(251, 191, 36, 0.08) 100%);
+    border-radius: 12px;
+    border-left: 3px solid #f472b6;
 }
 
 .case-study-description {
@@ -392,25 +451,7 @@
 }
 
 .case-study-features {
-    padding: 0 32px 32px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.case-study-features li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(220, 38, 38, 0.45);
-    border-radius: var(--radius-full);
-    font-size: 0.85rem;
-    color: var(--text-light);
-}
-
-.case-study-features li svg {
-    color: #10B981;
+    display: none;
 }
 
 /* Testimonials */
@@ -572,5 +613,103 @@
     .btn-whatsapp {
         width: 100%;
         justify-content: center;
+    }
+
+    .testimonial-card {
+        padding: 28px;
+    }
+
+    .case-study-header {
+        padding: 20px 24px 16px;
+    }
+
+    .case-study-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .case-study-content {
+        padding: 20px 24px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-hero {
+        min-height: 40vh;
+        padding: 100px 0 40px;
+    }
+
+    .results-hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .results-hero-content p {
+        font-size: 1rem;
+    }
+
+    .page-badge {
+        font-size: 0.8rem;
+        padding: 10px 20px;
+    }
+
+    .case-study-header {
+        padding: 18px 20px 14px;
+    }
+
+    .case-study-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .industry-tag {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    .case-study-content {
+        padding: 16px 20px 20px;
+    }
+
+    .case-section h4 {
+        font-size: 0.95rem;
+    }
+
+    .case-section p {
+        font-size: 0.85rem;
+    }
+
+    .case-study-metrics {
+        padding: 14px 16px;
+    }
+
+    .metric-value {
+        font-size: 1.1rem;
+    }
+
+    .metric-label {
+        font-size: 0.7rem;
+    }
+
+    .impact-text {
+        font-size: 0.85rem;
+        padding: 12px 14px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .testimonial-content {
+        font-size: 0.95rem;
+    }
+
+    .results-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .results-cta p {
+        font-size: 1rem;
+    }
+
+    .results-cta .cta-content {
+        padding: 28px 20px;
     }
 }

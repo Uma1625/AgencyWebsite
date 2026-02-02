@@ -202,6 +202,8 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-card-wrapper {
@@ -212,6 +214,7 @@
     position: relative;
     height: 200px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .blog-card-image img {
@@ -239,6 +242,9 @@
 
 .blog-card-content {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .blog-card-content h2 {
@@ -285,6 +291,8 @@
     cursor: not-allowed;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    margin-top: auto;
+    width: fit-content;
 }
 
 .read-more-btn:disabled {
@@ -305,7 +313,14 @@
     font-size: 1.1rem;
 }
 
-/* Mobile Responsive */
+/* Responsive */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
 @media (max-width: 768px) {
     .blog-hero {
         padding: 120px 0 60px;
@@ -313,10 +328,71 @@
 
     .blog-grid {
         grid-template-columns: 1fr;
-        padding: 0 16px;
+        gap: 20px;
     }
 
     .blog-card-content h2 {
         font-size: 1.1rem;
+    }
+
+    .blog-card-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-hero {
+        padding: 100px 0 40px;
+    }
+
+    .blog-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .blog-hero p {
+        font-size: 1rem;
+    }
+
+    .blog-hero-content .section-label {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+
+    .blog-grid-section {
+        padding: 20px 0 60px;
+    }
+
+    .blog-card-image {
+        height: 160px;
+    }
+
+    .blog-card-content {
+        padding: 16px;
+    }
+
+    .blog-card-content h2 {
+        font-size: 1rem;
+    }
+
+    .blog-card-content p {
+        font-size: 0.85rem;
+    }
+
+    .blog-card-meta {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .meta-item {
+        font-size: 0.8rem;
+    }
+
+    .blog-coming-soon {
+        margin-top: 40px;
+        padding: 20px;
+    }
+
+    .blog-coming-soon p {
+        font-size: 0.95rem;
     }
 }

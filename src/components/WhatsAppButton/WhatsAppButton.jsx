@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
     return (
         <div className="floating-actions">
             <a
-                href={`tel:+${phoneNumber}`}
+                href="tel:7416506826"
                 className="float-btn call-btn"
                 aria-label="Call Now"
             >

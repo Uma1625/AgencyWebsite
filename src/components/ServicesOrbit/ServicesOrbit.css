@@ -142,7 +142,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Undo tilt for logo? No, keep it upright */
     /* To keep logo upright inside a tilted X system, we need to counter-rotate it X */
     transform: translate(-50%, -50%) rotateX(-20deg);
     z-index: 50;
@@ -546,9 +545,329 @@
     }
 }
 
-/* Mobile */
-@media (max-width: 1024px) {
+/* Mobile - Scale the Orbit */
+@media (max-width: 1200px) {
     .orbit-system-wrapper {
+        width: 750px;
+        height: 750px;
+    }
+
+    :root {
+        --orbit-radius: 300px;
+    }
+
+    .holo-card {
+        width: 180px;
+        height: 130px;
+    }
+
+    .reactor-core {
+        width: 160px;
+        height: 160px;
+    }
+
+    .core-energy-sphere {
+        width: 70px;
+        height: 70px;
+    }
+
+    .core-letter-3d {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .services-orbit-section {
+        padding: 60px 0 80px;
+        min-height: auto;
+    }
+
+    .orbit-header {
+        margin-bottom: 40px;
+    }
+
+    .title-premium {
+        font-size: 2.5rem;
+    }
+
+    .orbit-system-wrapper {
+        width: 600px;
+        height: 600px;
+        transform: rotateX(15deg);
+    }
+
+    :root {
+        --orbit-radius: 240px;
+    }
+
+    .holo-card {
+        width: 150px;
+        height: 110px;
+    }
+
+    .holo-title {
+        font-size: 0.8rem;
+    }
+
+    .holo-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .holo-status {
+        font-size: 0.6rem;
+    }
+
+    .reactor-core {
+        width: 130px;
+        height: 130px;
+    }
+
+    .core-energy-sphere {
+        width: 55px;
+        height: 55px;
+    }
+
+    .core-letter-3d {
+        font-size: 2.2rem;
+    }
+
+    .energy-field {
+        width: 550px;
+        height: 550px;
+    }
+
+    /* Hide grid fallback on tablet - show orbit */
+    .orbit-grid-fallback {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-orbit-section {
+        padding: 50px 0 60px;
+    }
+
+    .title-premium {
+        font-size: 2rem;
+    }
+
+    .subtitle-premium {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .orbit-system-wrapper {
+        width: 450px;
+        height: 450px;
+        transform: rotateX(10deg);
+    }
+
+    :root {
+        --orbit-radius: 180px;
+    }
+
+    .holo-card {
+        width: 120px;
+        height: 90px;
+    }
+
+    .holo-title {
+        font-size: 0.7rem;
+    }
+
+    .holo-icon-wrapper {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .holo-status {
         display: none;
     }
+
+    .reactor-core {
+        width: 100px;
+        height: 100px;
+    }
+
+    .core-energy-sphere {
+        width: 45px;
+        height: 45px;
+    }
+
+    .core-letter-3d {
+        font-size: 1.8rem;
+    }
+
+    .energy-field {
+        width: 400px;
+        height: 400px;
+    }
+
+    .holo-card-inner {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-orbit-section {
+        padding: 40px 0 50px;
+    }
+
+    .orbit-header {
+        margin-bottom: 30px;
+    }
+
+    .title-premium {
+        font-size: 1.5rem;
+    }
+
+    .subtitle-premium {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .orbit-system-wrapper {
+        width: 320px;
+        height: 320px;
+        transform: rotateX(5deg);
+    }
+
+    :root {
+        --orbit-radius: 130px;
+    }
+
+    .holo-card {
+        width: 90px;
+        height: 70px;
+    }
+
+    .holo-title {
+        font-size: 0.55rem;
+        letter-spacing: 0;
+    }
+
+    .holo-icon-wrapper {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+        border-radius: 6px;
+    }
+
+    .reactor-core {
+        width: 70px;
+        height: 70px;
+    }
+
+    .outer-ring {
+        border-width: 2px;
+    }
+
+    .core-energy-sphere {
+        width: 35px;
+        height: 35px;
+    }
+
+    .core-letter-3d {
+        font-size: 1.4rem;
+    }
+
+    .energy-field {
+        width: 280px;
+        height: 280px;
+    }
+
+    .holo-card-inner {
+        padding: 8px;
+    }
+
+    .scan-line {
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .orbit-system-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    :root {
+        --orbit-radius: 110px;
+    }
+
+    .holo-card {
+        width: 75px;
+        height: 60px;
+    }
+
+    .holo-title {
+        font-size: 0.5rem;
+    }
+
+    .holo-icon-wrapper {
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+        margin-bottom: 4px;
+    }
+
+    .reactor-core {
+        width: 60px;
+        height: 60px;
+    }
+
+    .core-energy-sphere {
+        width: 30px;
+        height: 30px;
+    }
+
+    .core-letter-3d {
+        font-size: 1.2rem;
+    }
+}
+
+/* Grid Fallback Card Styles - Hidden by default */
+.orbit-grid-fallback {
+    display: none;
+}
+
+.grid-service-card {
+    background: rgba(20, 20, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.grid-service-card:hover {
+    border-color: rgba(220, 38, 38, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
+}
+
+.grid-service-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    background: rgba(220, 38, 38, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.grid-service-card h4 {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
 }

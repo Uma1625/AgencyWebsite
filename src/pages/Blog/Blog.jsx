@@ -13,7 +13,7 @@ const Blog = () => {
             category: "Healthcare",
             author: "Vinay",
             date: "Coming Soon",
-            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400"
+            image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=400"
         },
         {
             id: 2,

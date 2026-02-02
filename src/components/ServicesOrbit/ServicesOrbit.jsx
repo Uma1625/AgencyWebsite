@@ -114,6 +114,21 @@ const ServicesOrbit = ({ services }) => {
                     </div>
                 </div>
 
+                {/* Mobile Grid Fallback - Shown on tablets/mobile */}
+                <div className="orbit-grid-fallback">
+                    {orbitServices.map((service, index) => (
+                        <div key={index} className="grid-service-card">
+                            <div
+                                className="grid-service-icon"
+                                style={{ color: service.color }}
+                            >
+                                {service.icon}
+                            </div>
+                            <h4>{service.title}</h4>
+                        </div>
+                    ))}
+                </div>
+
                 <motion.div
                     className="services-cta-btn"
                     initial={{ opacity: 0, y: 20 }}
