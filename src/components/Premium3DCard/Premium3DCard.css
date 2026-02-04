@@ -59,5 +59,7 @@
 }
 
 .card-content-layer {
+    position: relative;
+    z-index: 10;
     transform: translateZ(20px);
 }
